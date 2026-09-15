@@ -22,16 +22,23 @@ html, body {
   font-size: 10pt;
   line-height: 1.35;
   background: #e8e8e8;
+  /* Misma suavización en pantalla que en el raster del PDF (evita “subpixel más grueso”) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  font-synthesis: none;
 }
 
 .page {
   width: var(--page-w);
   min-height: var(--page-h);
   margin: 12px auto;
-  padding: var(--margin-y) var(--margin-x);
+  padding: var(--margin-y) var(--margin-x) 14mm;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   position: relative;
+  display: flex;
+  flex-direction: column;
   page-break-after: always;
   break-after: page;
 }
@@ -39,6 +46,10 @@ html, body {
 .page:last-child {
   page-break-after: auto;
   break-after: auto;
+}
+
+.page-body {
+  flex: 1 1 auto;
 }
 
 /* Cover */
@@ -53,8 +64,10 @@ html, body {
 .cover-entity {
   font-size: 16pt;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   margin: 0 0 4px;
+  /* Negrita un poco menos “tinta densa” al rasterizar el PDF */
+  color: #1a1a1a;
 }
 
 .cover-note {
@@ -183,10 +196,10 @@ html, body {
 }
 
 .page-footer {
-  position: absolute;
-  bottom: 10mm;
-  left: var(--margin-x);
-  right: var(--margin-x);
+  /* Empuja el pie al fondo de la página A4 (preview y PDF iguales) */
+  margin-top: auto;
+  flex: 0 0 auto;
+  width: 100%;
   font-size: 8pt;
   color: var(--muted);
   display: flex;
@@ -198,14 +211,44 @@ html, body {
 @media print {
   html, body {
     background: #fff;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    font-synthesis: none;
   }
 
   .page {
     margin: 0;
     box-shadow: none;
-    width: auto;
-    min-height: auto;
-    padding: 16mm 18mm;
+    width: var(--page-w);
+    min-height: var(--page-h);
+    height: var(--page-h);
+    padding: 16mm 18mm 14mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Alinea tipografía print/PDF con la preview suavizada */
+  .cover-entity,
+  .section-header .entity-name,
+  .section-header .stmt-title,
+  .stmt-heading,
+  .fin-table th,
+  .fin-table tr.is-group td.label,
+  .fin-table tr.is-total td,
+  .fin-table tr.is-subtotal td {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .cover-subtitle,
+  .cover-note,
+  .cover-intro,
+  .fin-table td,
+  .page-footer {
+    font-weight: 400;
+    color: #222;
   }
 
   @page {
