@@ -1,0 +1,32 @@
+{% extends "ui/layout.html" %}
+{% block title %}Informes{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Informes</h2>
+  <p class="muted">Selecciona un informe o trabaja con el proyecto demo.</p>
+  {% if projects %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Entidad</th>
+        <th>Ejercicio</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in projects %}
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.entity.legal_name }}</td>
+        <td>{{ p.period.current_end }}</td>
+        <td><a class="btn" href="/projects/{{ p.id }}">Abrir</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No hay proyectos en <code>data/projects</code>.</p>
+  {% endif %}
+</div>
+{% endblock %}

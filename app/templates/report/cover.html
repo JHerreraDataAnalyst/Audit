@@ -1,0 +1,22 @@
+<section class="page cover">
+  <h1 class="cover-entity">{{ entity.legal_name }}</h1>
+  {% if entity.legal_form_note %}
+  <p class="cover-note">{{ entity.legal_form_note }}</p>
+  {% endif %}
+
+  <p class="cover-subtitle">
+    {{ block['cover.subtitle'].text if block.get('cover.subtitle') else project.title }}
+  </p>
+  {% if block.get('cover.management') %}
+  <p class="cover-subtitle">{{ block['cover.management'].text }}</p>
+  {% endif %}
+
+  {% if block.get('intro.body') %}
+  <p class="cover-intro">{{ block['intro.body'].text }}</p>
+  {% endif %}
+
+  <div class="page-footer">
+    <span>{{ entity.legal_name }}</span>
+    <span>Portada</span>
+  </div>
+</section>

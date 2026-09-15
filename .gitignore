@@ -1,0 +1,26 @@
+# Entorno y caché
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Salidas y temporales
+outputs/
+.tmp/
+*_upload_*.xlsx
+*.pdf
+
+# Secretos / entorno local
+.env
+.env.*
+
+# Sistema / IDE
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+.vscode/
+*.swp

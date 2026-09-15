@@ -1,0 +1,215 @@
+/* Design tokens inspired by CCAA gold-standard DOCX (Arial Narrow, A4) */
+:root {
+  --font-report: "Arial Narrow", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --text: #111;
+  --muted: #444;
+  --rule: #222;
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 18mm;
+  --margin-y: 16mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: var(--font-report);
+  font-size: 10pt;
+  line-height: 1.35;
+  background: #e8e8e8;
+}
+
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12px auto;
+  padding: var(--margin-y) var(--margin-x);
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+}
+
+.page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Cover */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 55mm;
+  text-align: center;
+}
+
+.cover-entity {
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 4px;
+}
+
+.cover-note {
+  font-size: 11pt;
+  margin: 0 0 28px;
+}
+
+.cover-subtitle {
+  font-size: 12pt;
+  margin: 0 0 6px;
+  line-height: 1.45;
+}
+
+.cover-intro {
+  margin-top: 40mm;
+  text-align: justify;
+  font-size: 10pt;
+  max-width: 150mm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section header (balance page) */
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  font-size: 9pt;
+}
+
+.section-header .entity-name {
+  font-weight: 700;
+}
+
+.section-header .entity-note {
+  color: var(--muted);
+}
+
+.section-header .stmt-title {
+  text-align: right;
+  font-weight: 700;
+}
+
+.section-header .stmt-meta {
+  text-align: right;
+  color: var(--muted);
+}
+
+.stmt-heading {
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+/* Financial table */
+.fin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+}
+
+.fin-table th {
+  font-weight: 700;
+  text-align: right;
+  border-bottom: 1px solid var(--rule);
+  padding: 4px 6px;
+  vertical-align: bottom;
+}
+
+.fin-table th.col-label {
+  text-align: left;
+}
+
+.fin-table th.col-note {
+  text-align: center;
+  width: 14%;
+}
+
+.fin-table th.col-amount {
+  width: 18%;
+}
+
+.fin-table td {
+  padding: 3px 6px;
+  vertical-align: top;
+  border-bottom: none;
+}
+
+.fin-table td.amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.fin-table td.note {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.fin-table tr.level-2 td.label {
+  padding-left: 18px;
+  font-weight: 400;
+}
+
+.fin-table tr.level-1 td.label {
+  font-weight: 400;
+}
+
+.fin-table tr.is-group td.label {
+  font-weight: 700;
+}
+
+.fin-table tr.is-total td {
+  font-weight: 700;
+  border-top: 1px solid var(--rule);
+  padding-top: 6px;
+}
+
+.fin-table tr.is-subtotal td {
+  font-weight: 700;
+  border-top: 0.5px solid #999;
+  padding-top: 5px;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 10mm;
+  left: var(--margin-x);
+  right: var(--margin-x);
+  font-size: 8pt;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.5px solid #ccc;
+  padding-top: 4px;
+}
+
+@media print {
+  html, body {
+    background: #fff;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    width: auto;
+    min-height: auto;
+    padding: 16mm 18mm;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

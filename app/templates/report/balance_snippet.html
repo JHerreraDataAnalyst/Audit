@@ -1,0 +1,65 @@
+<section class="page balance-page">
+  <header class="section-header">
+    <div>
+      <div class="entity-name">{{ entity.legal_name }}</div>
+      <div class="entity-note">{{ entity.legal_form_note }}</div>
+    </div>
+    <div>
+      <div class="stmt-title">Balance de situación</div>
+      <div class="stmt-meta">al {{ period.current_end_long }}</div>
+      <div class="stmt-meta">({{ period.currency_label }})</div>
+    </div>
+  </header>
+
+  <h2 class="stmt-heading">Activo</h2>
+
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th class="col-label"></th>
+        <th class="col-note">Nota</th>
+        <th class="col-amount">{{ period.current_end_short }}</th>
+        <th class="col-amount">{{ period.prior_end_short }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line in asset_lines %}
+      <tr class="level-{{ line.level }} {% if line.is_total %}is-total{% elif line.role == 'subtotal' %}is-subtotal{% elif line.is_group %}is-group{% endif %}">
+        <td class="label">{{ line.label }}</td>
+        <td class="note">{{ line.note }}</td>
+        <td class="amount">{{ line.n_fmt }}</td>
+        <td class="amount">{{ line.n1_fmt }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if equity_lines %}
+  <h2 class="stmt-heading" style="margin-top: 18px;">Patrimonio neto y pasivo (resumen)</h2>
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th class="col-label"></th>
+        <th class="col-note">Nota</th>
+        <th class="col-amount">{{ period.current_end_short }}</th>
+        <th class="col-amount">{{ period.prior_end_short }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line in equity_lines %}
+      <tr class="level-{{ line.level }} {% if line.is_total %}is-total{% elif line.role == 'subtotal' %}is-subtotal{% elif line.is_group %}is-group{% endif %}">
+        <td class="label">{{ line.label }}</td>
+        <td class="note">{{ line.note }}</td>
+        <td class="amount">{{ line.n_fmt }}</td>
+        <td class="amount">{{ line.n1_fmt }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+  <div class="page-footer">
+    <span>{{ entity.legal_name }} — Balance</span>
+    <span>{{ period.current_end_short }}</span>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ entity.legal_name }} — {{ project.title }}</title>
+  <style>
+    {{ styles_css | safe }}
+  </style>
+</head>
+<body>
+  {% include "report/cover.html" %}
+  {% include "report/balance_snippet.html" %}
+</body>
+</html>

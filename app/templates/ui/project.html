@@ -1,0 +1,190 @@
+{% extends "ui/layout.html" %}
+{% block title %}{{ project.entity.legal_name }}{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>{{ project.entity.legal_name }}</h2>
+  <p class="muted">
+    {{ project.entity.legal_form_note }} · Ejercicio {{ project.period.current_end }}
+    (comparativo {{ project.period.prior_end }})
+  </p>
+  <nav class="tabs">
+    <a href="/projects/{{ project.id }}?tab=datos" class="{{ 'active' if tab == 'datos' else '' }}">Datos</a>
+    <a href="/projects/{{ project.id }}?tab=contenido" class="{{ 'active' if tab == 'contenido' else '' }}">Contenido</a>
+    <a href="/projects/{{ project.id }}?tab=validaciones" class="{{ 'active' if tab == 'validaciones' else '' }}">Validaciones</a>
+    <a href="/projects/{{ project.id }}?tab=preview" class="{{ 'active' if tab == 'preview' else '' }}">Vista previa</a>
+    <a href="/projects/{{ project.id }}?tab=pdf" class="{{ 'active' if tab == 'pdf' else '' }}">PDF</a>
+    <a href="/projects/{{ project.id }}?tab=excel" class="{{ 'active' if tab == 'excel' else '' }}">Excel</a>
+  </nav>
+</div>
+
+{% if tab == 'datos' %}
+<div class="card">
+  <h3>Datos financieros — Balance</h3>
+  <p class="muted">Fuente única de verdad. Al cambiar una cifra y guardar, el informe se regenera.</p>
+  <form method="post" action="/projects/{{ project.id }}/finance">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Nivel</th>
+          <th>Sección</th>
+          <th>Rol</th>
+          <th>Notas</th>
+          <th>N</th>
+          <th>N-1</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for line in finance.statements.balance.lines %}
+        <tr>
+          <td>
+            <input type="hidden" name="id" value="{{ line.id }}" />
+            <input type="text" name="label" value="{{ line.label }}" />
+          </td>
+          <td><input type="number" name="level" value="{{ line.level }}" min="1" max="3" style="width:64px" /></td>
+          <td>
+            <select name="section">
+              <option value="asset" {% if line.section == 'asset' %}selected{% endif %}>Activo</option>
+              <option value="equity_liability" {% if line.section == 'equity_liability' %}selected{% endif %}>PN/Pasivo</option>
+            </select>
+          </td>
+          <td>
+            <select name="role">
+              {% for r in ['detail','subtotal_group','subtotal','total'] %}
+              <option value="{{ r }}" {% if line.role == r %}selected{% endif %}>{{ r }}</option>
+              {% endfor %}
+            </select>
+          </td>
+          <td><input type="text" name="note_refs" value="{{ line.note_refs | join(';') }}" placeholder="5;9" /></td>
+          <td><input type="number" step="0.01" name="n" value="{{ line.n }}" /></td>
+          <td><input type="number" step="0.01" name="n1" value="{{ line.n1 }}" /></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="actions">
+      <button class="btn" type="submit">Guardar cifras</button>
+    </div>
+  </form>
+</div>
+<div class="card">
+  <h3>Añadir fila</h3>
+  <form method="post" action="/projects/{{ project.id }}/finance/add-row" class="grid-2">
+    <div>
+      <label>ID</label>
+      <input type="text" name="id" required placeholder="nueva_linea" />
+    </div>
+    <div>
+      <label>Concepto</label>
+      <input type="text" name="label" required placeholder="Nueva partida" />
+    </div>
+    <div>
+      <label>Nivel</label>
+      <input type="number" name="level" value="1" min="1" max="3" />
+    </div>
+    <div>
+      <label>Sección</label>
+      <select name="section">
+        <option value="asset">Activo</option>
+        <option value="equity_liability">PN/Pasivo</option>
+      </select>
+    </div>
+    <div>
+      <label>Rol</label>
+      <select name="role">
+        <option value="detail">detail</option>
+        <option value="subtotal_group">subtotal_group</option>
+        <option value="subtotal">subtotal</option>
+        <option value="total">total</option>
+      </select>
+    </div>
+    <div>
+      <label>Notas (separadas por ;)</label>
+      <input type="text" name="note_refs" />
+    </div>
+    <div>
+      <label>Importe N</label>
+      <input type="number" step="0.01" name="n" value="0" />
+    </div>
+    <div>
+      <label>Importe N-1</label>
+      <input type="number" step="0.01" name="n1" value="0" />
+    </div>
+    <div class="actions">
+      <button class="btn" type="submit">Añadir fila</button>
+    </div>
+  </form>
+</div>
+<div class="card">
+  <h3>Hechos / facts (textos vinculados)</h3>
+  <form method="post" action="/projects/{{ project.id }}/facts">
+    <div class="grid-2">
+      {% for key, val in finance.facts.items() %}
+      <div>
+        <label>{{ key }}</label>
+        <input type="hidden" name="fact_key" value="{{ key }}" />
+        <input type="number" step="0.01" name="fact_value" value="{{ val }}" />
+      </div>
+      {% endfor %}
+    </div>
+    <div class="actions">
+      <button class="btn" type="submit">Guardar facts</button>
+    </div>
+  </form>
+</div>
+
+{% elif tab == 'contenido' %}
+<div class="card">
+  <h3>Contenido parametrizado</h3>
+  <p class="muted">Edita el texto. Placeholders: <code>{{ '{{ period.current_end_long }}' }}</code>, <code>{{ '{{ fact.INGRESOS_N }}' }}</code>.</p>
+  {% for block in content.blocks %}
+  <form method="post" action="/projects/{{ project.id }}/content/{{ block.id }}" style="margin-bottom:18px;">
+    <label>{{ block.id }}</label>
+    <textarea name="text">{{ block.text }}</textarea>
+    <button class="btn secondary" type="submit">Guardar</button>
+  </form>
+  {% endfor %}
+</div>
+
+{% elif tab == 'validaciones' %}
+<div class="card">
+  <h3>Validaciones</h3>
+  {% for issue in validation.issues %}
+  <div class="alert {{ issue.severity if issue.severity != 'ok' else 'ok' }}">
+    {{ issue.message }}
+  </div>
+  {% endfor %}
+  <p class="muted">Activo: {{ totals.assets_n_fmt }} · Pasivo+PN: {{ totals.equity_liability_n_fmt }}</p>
+</div>
+
+{% elif tab == 'preview' %}
+<div class="card">
+  <h3>Vista previa</h3>
+  <p class="muted">Misma plantilla que el PDF.</p>
+  <iframe class="preview-frame" src="/projects/{{ project.id }}/preview"></iframe>
+</div>
+
+{% elif tab == 'pdf' %}
+<div class="card">
+  <h3>Generar PDF</h3>
+  <p class="muted">El PDF se genera con Chromium a partir del HTML tipográfico del informe.</p>
+  <div class="actions">
+    <a class="btn" href="/projects/{{ project.id }}/pdf">Descargar PDF</a>
+    <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank">Abrir HTML</a>
+  </div>
+</div>
+
+{% elif tab == 'excel' %}
+<div class="card">
+  <h3>Importar Excel</h3>
+  <p class="muted">Columnas: id, label, level, section, role, note_refs, n, n1</p>
+  <form method="post" action="/projects/{{ project.id }}/import-excel" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx" required />
+    <div class="actions">
+      <button class="btn" type="submit">Importar y reemplazar Balance</button>
+      <a class="btn secondary" href="/samples/balance_sample.xlsx">Descargar Excel de ejemplo</a>
+    </div>
+  </form>
+</div>
+{% endif %}
+{% endblock %}

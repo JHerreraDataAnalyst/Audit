@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    {
+      "id": "cover.subtitle",
+      "kind": "paragraph",
+      "text": "Cuentas Anuales correspondientes al ejercicio terminado el {{ period.current_end_long }}"
+    },
+    {
+      "id": "cover.management",
+      "kind": "paragraph",
+      "text": "e Informe de Gestión"
+    },
+    {
+      "id": "intro.body",
+      "kind": "paragraph",
+      "text": "Los resultados de las distintas categorías de activos financieros y el resto de las cifras del Balance de situación al {{ period.current_end_long }} se presentan comparados con el ejercicio anterior. El importe neto de la cifra de negocios del ejercicio asciende a {{ fact.INGRESOS_N }} euros ({{ fact.INGRESOS_N1 }} euros en el ejercicio precedente)."
+    },
+    {
+      "id": "balance.caption",
+      "kind": "paragraph",
+      "text": "Balance de situación al {{ period.current_end_short }}"
+    }
+  ]
+}

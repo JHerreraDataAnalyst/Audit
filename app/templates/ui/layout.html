@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Informes financieros{% endblock %}</title>
+  <link rel="stylesheet" href="/static/ui.css" />
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="/" style="color:#fff;text-decoration:none;">Motor de informes</a></h1>
+    <div class="meta">MVP local · PDF nativo</div>
+  </header>
+  <main class="wrap">
+    {% if flash %}
+    <div class="flash alert {{ flash_type or 'ok' }}">{{ flash }}</div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

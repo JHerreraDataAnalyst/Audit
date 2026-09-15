@@ -1,0 +1,186 @@
+{
+  "statements": {
+    "balance": {
+      "lines": [
+        {
+          "id": "intangible",
+          "label": "Inmovilizado intangible",
+          "level": 1,
+          "note_refs": ["5"],
+          "n": 0.0,
+          "n1": 18106.00,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "software",
+          "label": "Aplicaciones informáticas",
+          "level": 2,
+          "parent": "intangible",
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 18106.00,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "ppe",
+          "label": "Inmovilizado material",
+          "level": 1,
+          "note_refs": ["6"],
+          "n": 105676.29,
+          "n1": 13004.78,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "ppe_other",
+          "label": "Instalaciones técnicas y otro inmovilizado material",
+          "level": 2,
+          "parent": "ppe",
+          "note_refs": [],
+          "n": 105676.29,
+          "n1": 13004.78,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "group_investments_lt",
+          "label": "Inversiones en empresas del grupo y asociadas a largo plazo",
+          "level": 1,
+          "note_refs": ["8", "9", "19"],
+          "n": 3024931.12,
+          "n1": 3024931.12,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "equity_instruments",
+          "label": "Instrumentos de patrimonio",
+          "level": 2,
+          "parent": "group_investments_lt",
+          "note_refs": [],
+          "n": 3024931.12,
+          "n1": 3024931.12,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "financial_investments_lt",
+          "label": "Inversiones financieras a largo plazo",
+          "level": 1,
+          "note_refs": ["9"],
+          "n": 0.0,
+          "n1": 28023.02,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "total_non_current_assets",
+          "label": "Total activo no corriente",
+          "level": 1,
+          "note_refs": [],
+          "n": 3130607.41,
+          "n1": 3084064.92,
+          "role": "subtotal",
+          "section": "asset"
+        },
+        {
+          "id": "trade_receivables",
+          "label": "Deudores comerciales y otras cuentas a cobrar",
+          "level": 1,
+          "note_refs": ["9", "10"],
+          "n": 1250432.18,
+          "n1": 980215.44,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "clients",
+          "label": "Clientes por ventas y prestaciones de servicios",
+          "level": 2,
+          "parent": "trade_receivables",
+          "note_refs": [],
+          "n": 1250432.18,
+          "n1": 980215.44,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "cash",
+          "label": "Efectivo y otros activos líquidos equivalentes",
+          "level": 1,
+          "note_refs": ["11"],
+          "n": 214890.41,
+          "n1": 156320.10,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "total_current_assets",
+          "label": "Total activo corriente",
+          "level": 1,
+          "note_refs": [],
+          "n": 1465322.59,
+          "n1": 1136535.54,
+          "role": "subtotal",
+          "section": "asset"
+        },
+        {
+          "id": "total_assets",
+          "label": "TOTAL ACTIVO",
+          "level": 1,
+          "note_refs": [],
+          "n": 4595929.99,
+          "n1": 4220600.46,
+          "role": "total",
+          "section": "asset"
+        },
+        {
+          "id": "equity_total",
+          "label": "Patrimonio neto",
+          "level": 1,
+          "note_refs": ["12"],
+          "n": 3210450.22,
+          "n1": 2980120.15,
+          "role": "subtotal",
+          "section": "equity_liability"
+        },
+        {
+          "id": "non_current_liabilities",
+          "label": "Pasivo no corriente",
+          "level": 1,
+          "note_refs": ["13"],
+          "n": 485200.00,
+          "n1": 512300.00,
+          "role": "subtotal",
+          "section": "equity_liability"
+        },
+        {
+          "id": "current_liabilities",
+          "label": "Pasivo corriente",
+          "level": 1,
+          "note_refs": ["14"],
+          "n": 900279.77,
+          "n1": 728180.31,
+          "role": "subtotal",
+          "section": "equity_liability"
+        },
+        {
+          "id": "total_equity_liability",
+          "label": "TOTAL PATRIMONIO NETO Y PASIVO",
+          "level": 1,
+          "note_refs": [],
+          "n": 4595929.99,
+          "n1": 4220600.46,
+          "role": "total",
+          "section": "equity_liability"
+        }
+      ]
+    }
+  },
+  "facts": {
+    "INGRESOS_N": 2750000.00,
+    "INGRESOS_N1": 2480000.00
+  }
+}
