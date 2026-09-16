@@ -2,11 +2,11 @@
   "id": "demo-hh-print",
   "entity": {
     "legal_name": "HH PRINT MANAGEMENT SPAIN, S.L.",
-    "legal_form_note": "(Sociedad Unipersonal)"
+    "legal_form_note": "Sociedad Unipersonal"
   },
   "period": {
-    "current_end": "2024-03-31",
-    "prior_end": "2023-03-31",
+    "current_end": "2023-03-31",
+    "prior_end": "2022-03-31",
     "currency": "EUR",
     "currency_label": "Euros"
   },

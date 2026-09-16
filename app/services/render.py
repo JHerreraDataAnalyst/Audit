@@ -10,6 +10,7 @@ from app.domain.project import Project
 from app.services.context_builder import build_context
 
 TEMPLATES_DIR = Path(__file__).resolve().parents[1] / "templates"
+STATIC_DIR = Path(__file__).resolve().parents[1] / "static"
 
 
 def _env() -> Environment:
@@ -19,10 +20,18 @@ def _env() -> Environment:
     )
 
 
-def render_report_html(project: Project, finance: FinanceModel, content: ContentModel) -> str:
+def render_report_html(
+    project: Project,
+    finance: FinanceModel,
+    content: ContentModel,
+    editable: bool = False,
+) -> str:
     ctx = build_context(project, finance, content)
-    styles_path = TEMPLATES_DIR / "report" / "styles.css"
-    ctx["styles_css"] = styles_path.read_text(encoding="utf-8")
+    ctx["editable"] = editable
+    ctx["styles_css"] = (TEMPLATES_DIR / "report" / "styles.css").read_text(encoding="utf-8")
+    ctx["layout_js"] = (STATIC_DIR / "report" / "layout.js").read_text(encoding="utf-8")
+    ctx["editor_js"] = (STATIC_DIR / "report" / "editor.js").read_text(encoding="utf-8")
+    ctx["table_editor_js"] = (STATIC_DIR / "report" / "table_editor.js").read_text(encoding="utf-8")
     template = _env().get_template("report/base.html")
     return template.render(**ctx)
 

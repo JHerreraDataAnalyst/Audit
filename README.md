@@ -27,13 +27,25 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
 Abre http://127.0.0.1:8000
 
-## Flujo MVP
+## Flujo recomendado
 
-1. Abrir el informe demo HH Print
-2. Editar cifras / añadir fila en **Datos**
-3. Editar párrafos en **Contenido**
-4. Revisar **Validaciones**
-5. **Vista previa** → **Generar PDF**
+1. En el dashboard: **Nuevo informe desde DOCX** (CCAA del año anterior)
+2. El sistema importa portada, memoria, tablas, **Balance** y **PyG** tipados
+3. Marca **Preparar ejercicio siguiente** (rollover) si quieres N→N-1
+4. Completa o ajusta cifras en **Datos** / vista previa
+5. Revisa **Validaciones** → **Vista previa** → **PDF**
+
+Orden del PDF: portada → Balance → PyG → Memoria (flujo dinámico).
+
+El PDF es dinámico: al acortar o alargar texto, el documento se recompacta solo (mismo motor que la preview).
+
+## Layout dinámico
+
+El informe no usa páginas fijas ni coordenadas absolutas. El contenido fluye:
+
+`modelo → HTML de flujo → layout.js (páginas A4) → preview / PDF`
+
+Si acortas, eliminas o alargas un párrafo, el documento se recompacta solo.
 
 ## Estructura
 

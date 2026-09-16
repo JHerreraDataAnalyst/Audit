@@ -63,3 +63,17 @@ def save_project(project: Project) -> None:
         json.dumps(project.model_dump(mode="json"), ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+
+def load_finance_seed(project_id: str) -> FinanceModel:
+    path = project_dir(project_id) / "finance.seed.json"
+    if path.exists():
+        return FinanceModel.model_validate_json(path.read_text(encoding="utf-8"))
+    return load_finance(project_id)
+
+
+def load_content_seed(project_id: str) -> ContentModel:
+    path = project_dir(project_id) / "content.seed.json"
+    if path.exists():
+        return ContentModel.model_validate_json(path.read_text(encoding="utf-8"))
+    return load_content(project_id)

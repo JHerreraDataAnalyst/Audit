@@ -1,18 +1,19 @@
-/* Design tokens inspired by CCAA gold-standard DOCX (Arial Narrow, A4) */
+/* Design tokens: CCAA profesional (Arial Narrow, A4). Flujo dinámico, tipografía neutra. */
 :root {
   --font-report: "Arial Narrow", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --text: #111;
-  --muted: #444;
+  --text: #1a1a1a;
+  --muted: #555;
   --rule: #222;
+  --accent: #333;
+  --accent-soft: rgba(0, 0, 0, 0.06);
   --page-w: 210mm;
   --page-h: 297mm;
   --margin-x: 18mm;
-  --margin-y: 16mm;
+  --margin-top: 16mm;
+  --margin-bottom: 14mm;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -20,184 +21,310 @@ html, body {
   color: var(--text);
   font-family: var(--font-report);
   font-size: 10pt;
-  line-height: 1.35;
+  line-height: 1.4;
   background: #e8e8e8;
-  /* Misma suavización en pantalla que en el raster del PDF (evita “subpixel más grueso”) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
   font-synthesis: none;
 }
 
-.page {
+.measure-source {
+  position: absolute;
+  left: -220mm;
+  top: 0;
+  width: calc(var(--page-w) - (2 * var(--margin-x)));
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#doc-pages {
+  padding: 12px 0 32px;
+}
+
+.sheet {
   width: var(--page-w);
-  min-height: var(--page-h);
-  margin: 12px auto;
-  padding: var(--margin-y) var(--margin-x) 14mm;
+  height: var(--page-h);
+  margin: 0 auto 12px;
+  padding: var(--margin-top) var(--margin-x) 10mm;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-  position: relative;
   display: flex;
   flex-direction: column;
-  page-break-after: always;
   break-after: page;
+  page-break-after: always;
 }
 
-.page:last-child {
-  page-break-after: auto;
+.sheet:last-child {
   break-after: auto;
+  page-break-after: auto;
 }
 
-.page-body {
+.sheet-body {
   flex: 1 1 auto;
+  overflow: hidden;
+  min-height: 0;
 }
 
-/* Cover */
-.cover {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 55mm;
+.sheet-first .cover-entity {
+  padding-top: 48mm;
   text-align: center;
 }
 
+/* ── Cover ─────────────────────────────────────────────────────────────────── */
 .cover-entity {
   font-size: 16pt;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  margin: 0 0 4px;
-  /* Negrita un poco menos “tinta densa” al rasterizar el PDF */
-  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+  text-align: center;
 }
 
 .cover-note {
   font-size: 11pt;
   margin: 0 0 28px;
+  text-align: center;
+  color: var(--muted);
 }
 
 .cover-subtitle {
   font-size: 12pt;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   line-height: 1.45;
+  text-align: center;
 }
 
-.cover-intro {
-  margin-top: 40mm;
+/* ── Headings (Memoria notes) ──────────────────────────────────────────────── */
+.comp-heading1 {
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 1.5em 0 0.45em;
+  color: var(--text);
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.comp-heading1 .note-num {
+  color: var(--text);
+}
+
+.comp-heading2 {
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 1.1em 0 0.35em;
+  color: var(--text);
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* ── Narrative paragraphs ──────────────────────────────────────────────────── */
+.narrative {
   text-align: justify;
   font-size: 10pt;
-  max-width: 150mm;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 0 0.75em;
+  orphans: 3;
+  widows: 3;
 }
 
-/* Section header (balance page) */
+.narrative-list {
+  padding-left: 12px;
+  text-indent: -12px;
+  margin-bottom: 0.4em;
+}
+
+.comp-heading {
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 1.1em 0 0.45em;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* ── Section header ────────────────────────────────────────────────────────── */
 .section-header {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 8px 16px;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 6px;
-  margin-bottom: 14px;
+  margin: 1.4em 0 12px;
   font-size: 9pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
-.section-header .entity-name {
-  font-weight: 700;
+.section-header .entity-name { font-weight: 700; }
+.section-header .entity-note { color: var(--muted); }
+.section-header .stmt-title { text-align: right; font-weight: 700; }
+.section-header .stmt-meta { text-align: right; color: var(--muted); }
+
+/* ── Financial tables ──────────────────────────────────────────────────────── */
+.comp-table {
+  margin: 0 0 1em;
 }
 
-.section-header .entity-note {
-  color: var(--muted);
-}
-
-.section-header .stmt-title {
-  text-align: right;
-  font-weight: 700;
-}
-
-.section-header .stmt-meta {
-  text-align: right;
-  color: var(--muted);
-}
-
-.stmt-heading {
-  font-size: 11pt;
-  font-weight: 700;
-  margin: 0 0 10px;
-}
-
-/* Financial table */
 .fin-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 9pt;
+  table-layout: auto;
+}
+
+.fin-table.cols-dense {
+  font-size: 7.5pt;
 }
 
 .fin-table th {
   font-weight: 700;
   text-align: right;
   border-bottom: 1px solid var(--rule);
-  padding: 4px 6px;
+  padding: 4px 5px;
   vertical-align: bottom;
+  line-height: 1.2;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: manual;
 }
 
-.fin-table th.col-label {
+.fin-table thead { display: table-header-group; }
+.fin-table tr { break-inside: avoid; page-break-inside: avoid; }
+
+.fin-table th.col-label,
+.fin-table td.label {
   text-align: left;
+  min-width: 32mm;
+  width: 30%;
+  max-width: 58mm;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
-.fin-table th.col-note {
-  text-align: center;
-  width: 14%;
-}
-
-.fin-table th.col-amount {
-  width: 18%;
-}
-
-.fin-table td {
-  padding: 3px 6px;
+.fin-table th.col-text,
+.fin-table td.text {
+  text-align: left;
+  min-width: 22mm;
+  max-width: 36mm;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
   vertical-align: top;
-  border-bottom: none;
 }
 
-.fin-table td.amount {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+.fin-table th.col-text-wide,
+.fin-table td.text-wide {
+  text-align: left;
+  min-width: 28mm;
+  max-width: 42mm;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
+.fin-table th.col-note,
 .fin-table td.note {
   text-align: center;
+  min-width: 10mm;
+  width: 1%;
   white-space: nowrap;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-.fin-table tr.level-2 td.label {
-  padding-left: 18px;
-  font-weight: 400;
+.fin-table th.col-amount,
+.fin-table td.amount {
+  text-align: right;
+  min-width: 18mm;
+  width: 1%;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding-left: 6px;
 }
 
-.fin-table tr.level-1 td.label {
-  font-weight: 400;
+.fin-table.cols-dense th.col-label,
+.fin-table.cols-dense td.label {
+  min-width: 26mm;
+  max-width: 42mm;
+  width: 22%;
 }
 
-.fin-table tr.is-group td.label {
-  font-weight: 700;
+.fin-table.cols-dense th.col-amount,
+.fin-table.cols-dense td.amount {
+  min-width: 14mm;
+  padding-left: 4px;
 }
 
+.fin-table td { padding: 3px 5px; vertical-align: top; }
+.fin-table tr.level-2 td.label { padding-left: 14px; font-weight: 400; }
+.fin-table tr.level-1 td.label { font-weight: 400; }
+.fin-table tr.is-group td.label { font-weight: 700; }
 .fin-table tr.is-total td {
   font-weight: 700;
   border-top: 1px solid var(--rule);
   padding-top: 6px;
 }
-
 .fin-table tr.is-subtotal td {
   font-weight: 700;
   border-top: 0.5px solid #999;
   padding-top: 5px;
 }
 
+/* Table hover hint for editing */
+.is-editable-table {
+  cursor: pointer;
+  border-radius: 3px;
+  transition: box-shadow 0.15s ease, outline 0.15s ease;
+}
+.is-editable-table:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12);
+  outline: 1px dashed rgba(0, 0, 0, 0.35);
+  outline-offset: 4px;
+}
+.is-editable-table td.note {
+  cursor: pointer;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Whole table object selected (not a single row) */
+.is-editable-table.table-focus,
+table.table-focus {
+  background: #fff8e6;
+  box-shadow: 0 0 0 3px #e0b84a;
+  outline: 2px solid #d4a017;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.is-editable-table.table-focus table,
+table.table-focus {
+  background: #fff8e6;
+}
+
+.is-editable-table.table-focus td,
+.is-editable-table.table-focus th,
+table.table-focus td,
+table.table-focus th {
+  background-color: #fff8e6;
+}
+
+.is-editable-table.table-focus thead th,
+table.table-focus thead th {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.nav-target-flash {
+  outline: 2px solid #2f6fed !important;
+  outline-offset: 3px;
+  background: rgba(47, 111, 237, 0.08) !important;
+  transition: background 0.3s ease, outline-color 0.3s ease;
+}
+
+/* ── Page footer ───────────────────────────────────────────────────────────── */
 .page-footer {
-  /* Empuja el pie al fondo de la página A4 (preview y PDF iguales) */
-  margin-top: auto;
   flex: 0 0 auto;
   width: 100%;
   font-size: 8pt;
@@ -206,50 +333,336 @@ html, body {
   justify-content: space-between;
   border-top: 0.5px solid #ccc;
   padding-top: 4px;
+  margin-top: 6px;
 }
 
+/* ── Inline editor (paragraphs) ────────────────────────────────────────────── */
+.is-editable {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.12s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.is-editable:hover {
+  background: rgba(0, 0, 0, 0.04);
+  outline: 1px dashed rgba(0, 0, 0, 0.28);
+  outline-offset: 2px;
+}
+.is-editable.editing {
+  background: transparent;
+  outline: 2px solid #666;
+  outline-offset: 2px;
+}
+.is-editable.editing:hover {
+  background: transparent;
+}
+
+.inline-editor {
+  margin-top: 8px;
+  padding: 8px;
+  background: #f7f5f0;
+  border: 1px solid #cfc8b8;
+  border-radius: 4px;
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: auto;
+}
+.inline-editor textarea {
+  width: 100%;
+  min-height: 90px;
+  font-family: var(--font-report);
+  font-size: 10pt;
+  line-height: 1.4;
+  padding: 8px;
+  border: 1px solid #cfc8b8;
+  resize: vertical;
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+.inline-editor-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.ed-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: opacity 0.12s;
+}
+.ed-btn:hover { opacity: 0.88; }
+.ed-secondary { background: #fff; color: var(--accent); }
+.ed-danger { background: #fff; color: #8b1e1e; border-color: #8b1e1e; }
+
+/* ── Table editor side panel (no fullscreen overlay) ───────────────────────── */
+body.table-editor-open #doc-pages {
+  padding-right: min(720px, 52vw);
+}
+
+.table-side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: min(720px, 52vw);
+  height: 100vh;
+  display: none;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.08);
+}
+
+.table-side-panel.active {
+  display: block;
+}
+
+.table-side-panel-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Legacy class kept inert so old overlay never covers the preview */
+.table-modal-overlay {
+  display: none !important;
+}
+
+.table-modal {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.table-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid #e0ddd8;
+  flex: 0 0 auto;
+}
+
+.table-modal-title {
+  font-family: var(--font-report);
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.table-modal-close {
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+.table-modal-close:hover {
+  background: #e8e8e8;
+}
+
+.table-modal-body {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 12px 16px;
+  min-height: 120px;
+}
+
+.table-modal-empty {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  background: #f7f5f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #444;
+}
+
+.table-modal-subtitle {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.table-modal-impact {
+  padding: 0 16px 8px;
+  flex: 0 0 auto;
+}
+
+.impact-box {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+
+.impact-title {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.impact-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.impact-tag {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #222;
+}
+
+.table-modal-validation {
+  padding: 0 16px 8px;
+  flex: 0 0 auto;
+}
+
+.table-modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 10px 16px 14px;
+  border-top: 1px solid #e0ddd8;
+  flex: 0 0 auto;
+}
+
+/* Modal table editing */
+.modal-edit-table {
+  font-size: 9.5pt;
+}
+
+.modal-edit-table th {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: #fff;
+  z-index: 2;
+  font-size: 8.5pt;
+  padding: 6px 8px;
+}
+
+.table-cell-input {
+  width: 100%;
+  min-width: 80px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-family: var(--font-report);
+  font-size: 9.5pt;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  background: #fff;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.table-cell-input:focus {
+  border-color: #666;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  outline: none;
+}
+
+.table-cell-input.cell-changed {
+  border-color: #e67e22;
+  background: #fff8f0;
+}
+
+/* Validation badges */
+.validation-badge {
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-report);
+}
+.validation-badge.ok {
+  background: #f0f0f0;
+  color: #222;
+}
+.validation-badge.warning {
+  background: #fff3e0;
+  color: #e65100;
+}
+.validation-badge.error {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+/* Animations */
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Print ─────────────────────────────────────────────────────────────────── */
 @media print {
   html, body {
     background: #fff;
     color: #1a1a1a;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: geometricPrecision;
-    font-synthesis: none;
   }
 
-  .page {
+  #doc-pages { padding: 0; }
+
+  .sheet {
     margin: 0;
     box-shadow: none;
     width: var(--page-w);
-    min-height: var(--page-h);
     height: var(--page-h);
-    padding: 16mm 18mm 14mm;
-    display: flex;
-    flex-direction: column;
+    padding: 16mm 18mm 10mm;
   }
 
-  /* Alinea tipografía print/PDF con la preview suavizada */
-  .cover-entity,
-  .section-header .entity-name,
-  .section-header .stmt-title,
-  .stmt-heading,
-  .fin-table th,
-  .fin-table tr.is-group td.label,
-  .fin-table tr.is-total td,
-  .fin-table tr.is-subtotal td {
-    font-weight: 700;
-    letter-spacing: 0.02em;
+  .is-editable:hover,
+  .is-editable {
+    background: transparent;
+    outline: none;
+    cursor: default;
   }
 
-  .cover-subtitle,
-  .cover-note,
-  .cover-intro,
-  .fin-table td,
-  .page-footer {
-    font-weight: 400;
-    color: #222;
+  .is-editable-table:hover {
+    box-shadow: none;
+    outline: none;
   }
+
+  .fin-table tr.row-focus > td,
+  .fin-table td.note-focus,
+  .is-editable-table.table-focus,
+  table.table-focus,
+  .is-editable-table.table-focus td,
+  .is-editable-table.table-focus th,
+  table.table-focus td,
+  table.table-focus th {
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .inline-editor { display: none !important; }
+  .table-modal-overlay,
+  .table-side-panel { display: none !important; }
+  body.table-editor-open #doc-pages { padding-right: 0; }
 
   @page {
     size: A4;

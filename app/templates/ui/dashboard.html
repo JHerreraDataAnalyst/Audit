@@ -3,7 +3,7 @@
 {% block content %}
 <div class="card">
   <h2>Informes</h2>
-  <p class="muted">Selecciona un informe o trabaja con el proyecto demo.</p>
+  <p class="muted">Abre un informe existente o crea uno nuevo importando el Word del año anterior.</p>
   {% if projects %}
   <table class="table">
     <thead>
@@ -28,5 +28,32 @@
   {% else %}
   <p>No hay proyectos en <code>data/projects</code>.</p>
   {% endif %}
+</div>
+
+<div class="card">
+  <h3>Nuevo informe desde DOCX</h3>
+  <p class="muted">
+    Sube las Cuentas Anuales del ejercicio anterior. Se importa la estructura (portada, memoria, tablas)
+    y puedes preparar automáticamente el siguiente ejercicio (rollover: N → N-1).
+  </p>
+  <form method="post" action="/projects/from-docx" enctype="multipart/form-data">
+    <div style="display:grid; gap:12px; max-width:520px;">
+      <label>
+        Archivo Word (.docx)
+        <input type="file" name="file" accept=".docx" required />
+      </label>
+      <label>
+        Cierre del nuevo ejercicio (opcional, ISO)
+        <input type="date" name="current_end" />
+      </label>
+      <label style="display:flex; gap:8px; align-items:center;">
+        <input type="checkbox" name="apply_rollover" value="1" checked />
+        Preparar ejercicio siguiente (pasar cifras N a N-1 y dejar N a cero)
+      </label>
+      <div class="actions">
+        <button class="btn" type="submit">Crear informe</button>
+      </div>
+    </div>
+  </form>
 </div>
 {% endblock %}

@@ -1,0 +1,35 @@
+<header class="comp section-header" data-keep-with-next="true">
+  <div>
+    <div class="entity-name">{{ entity.legal_name }}</div>
+    <div class="entity-note">{{ entity.legal_form_note }}</div>
+  </div>
+  <div>
+    <div class="stmt-title">Cuenta de pérdidas y ganancias</div>
+    <div class="stmt-meta">ejercicio terminado el {{ period.current_end_long }}</div>
+    <div class="stmt-meta">({{ period.currency_label }})</div>
+  </div>
+</header>
+
+<div class="comp comp-table is-editable-table" data-table-id="pyg_statement">
+  <table class="fin-table" data-table-id="pyg_statement">
+    <thead>
+      <tr>
+        <th class="col-label"></th>
+        <th class="col-note">Nota</th>
+        <th class="col-amount">{{ period.current_year }}</th>
+        <th class="col-amount">{{ period.prior_year }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line in pyg_lines %}
+      <tr class="level-{{ line.level }} {% if line.is_header %}is-group{% elif line.is_total %}is-total{% elif line.role == 'subtotal' %}is-subtotal{% elif line.is_group %}is-group{% endif %}"
+          data-line-id="{{ line.id }}">
+        <td class="label">{{ line.label }}</td>
+        <td class="note">{% if not line.is_header %}{{ line.note }}{% endif %}</td>
+        <td class="amount" data-col="n" data-numeric="{{ line.n }}">{% if not line.is_header %}{{ line.n_fmt }}{% endif %}</td>
+        <td class="amount" data-col="n1" data-numeric="{{ line.n1 }}">{% if not line.is_header %}{{ line.n1_fmt }}{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -7,8 +7,67 @@
     {{ styles_css | safe }}
   </style>
 </head>
-<body>
-  {% include "report/cover.html" %}
-  {% include "report/balance_snippet.html" %}
+<body
+  data-editable="{{ 'true' if editable else 'false' }}"
+  data-project-id="{{ project.id }}"
+  data-footer-left="{{ entity.legal_name }}">
+  <div id="doc-flow" class="measure-source">
+    {% include "report/cover.html" %}
+
+    {# Orden CCAA: portada → Balance → PyG → resto (memoria / tablas) #}
+    {% if asset_lines or equity_lines %}
+      {% include "report/balance_snippet.html" %}
+    {% endif %}
+
+    {% if pyg_lines %}
+      {% include "report/pyg_snippet.html" %}
+    {% endif %}
+
+    {% for item in blocks %}
+      {% if item.kind == 'heading1' %}
+        <h1 class="comp comp-heading1 is-editable"
+            data-block-id="{{ item.id }}"
+            data-raw="{{ item.raw | e }}"
+            data-keep-with-next="true">
+          {% if item.note_number %}<span class="note-num">{{ item.note_number }}.</span> {% endif %}{{ item.text }}
+        </h1>
+
+      {% elif item.kind == 'heading2' %}
+        <h2 class="comp comp-heading2 is-editable"
+            data-block-id="{{ item.id }}"
+            data-raw="{{ item.raw | e }}"
+            data-keep-with-next="true">{{ item.text }}</h2>
+
+      {% elif item.kind == 'table_ref' %}
+        {% if item.table_id and tables.get(item.table_id) %}
+          {% with tbl = tables[item.table_id] %}
+            {% include "report/generic_table.html" %}
+          {% endwith %}
+        {% endif %}
+
+      {% elif item.kind == 'paragraph' and item.id not in ['cover.subtitle', 'cover.management', 'balance.caption'] %}
+        <p class="comp narrative is-editable"
+           data-block-id="{{ item.id }}"
+           data-raw="{{ item.raw | e }}">{{ item.text }}</p>
+
+      {% elif item.kind == 'list_item' %}
+        <p class="comp narrative narrative-list is-editable"
+           data-block-id="{{ item.id }}"
+           data-raw="{{ item.raw | e }}">• {{ item.text }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div id="doc-pages"></div>
+  <script>
+    {{ layout_js | safe }}
+  </script>
+  {% if editable %}
+  <script>
+    {{ editor_js | safe }}
+  </script>
+  <script>
+    {{ table_editor_js | safe }}
+  </script>
+  {% endif %}
 </body>
 </html>

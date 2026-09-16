@@ -852,8 +852,8 @@
             "is_total": false
           },
           "c1": {
-            "value": "1.234,56",
-            "numeric": 1234.56,
+            "value": "3",
+            "numeric": null,
             "bold": false,
             "is_total": false
           },

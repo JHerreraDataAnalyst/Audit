@@ -1,19 +1,37 @@
 {% extends "ui/layout.html" %}
 {% block title %}{{ project.entity.legal_name }}{% endblock %}
+{% block wrap_class %}{% if tab == 'preview' %}preview-wide{% endif %}{% endblock %}
 {% block content %}
 <div class="card">
-  <h2>{{ project.entity.legal_name }}</h2>
-  <p class="muted">
-    {{ project.entity.legal_form_note }} · Ejercicio {{ project.period.current_end }}
-    (comparativo {{ project.period.prior_end }})
-  </p>
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+    <div>
+      <h2 style="margin:0 0 4px 0;">{{ project.entity.legal_name }}</h2>
+      <p class="muted" style="margin:0;">
+        {{ project.entity.legal_form_note }} · Ejercicio {{ project.period.current_end }}
+        (comparativo {{ project.period.prior_end }})
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+      <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346; border-color:#217346; font-size:12px; padding: 6px 14px; font-weight:600;">
+        📊 Descargar Excel
+      </a>
+      <a class="btn" href="/projects/{{ project.id }}/pdf" style="font-size:12px; padding: 6px 14px;">
+        📄 Descargar PDF
+      </a>
+      <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank" style="font-size:12px; padding: 6px 14px;">
+        👁️ Ver Informe
+      </a>
+    </div>
+  </div>
   <nav class="tabs">
     <a href="/projects/{{ project.id }}?tab=datos" class="{{ 'active' if tab == 'datos' else '' }}">Datos</a>
     <a href="/projects/{{ project.id }}?tab=contenido" class="{{ 'active' if tab == 'contenido' else '' }}">Contenido</a>
+    <a href="/projects/{{ project.id }}?tab=tablas" class="{{ 'active' if tab == 'tablas' else '' }}">Tablas</a>
     <a href="/projects/{{ project.id }}?tab=validaciones" class="{{ 'active' if tab == 'validaciones' else '' }}">Validaciones</a>
     <a href="/projects/{{ project.id }}?tab=preview" class="{{ 'active' if tab == 'preview' else '' }}">Vista previa</a>
-    <a href="/projects/{{ project.id }}?tab=pdf" class="{{ 'active' if tab == 'pdf' else '' }}">PDF</a>
-    <a href="/projects/{{ project.id }}?tab=excel" class="{{ 'active' if tab == 'excel' else '' }}">Excel</a>
+    <a href="/projects/{{ project.id }}?tab=layout" class="{{ 'active' if tab == 'layout' else '' }}">Pruebas layout</a>
+    <a href="/projects/{{ project.id }}?tab=pdf" class="{{ 'active' if tab == 'pdf' else '' }}">Exportar</a>
+    <a href="/projects/{{ project.id }}?tab=excel" class="{{ 'active' if tab == 'excel' else '' }}">Automatizar</a>
   </nav>
 </div>
 
@@ -136,53 +154,222 @@
 {% elif tab == 'contenido' %}
 <div class="card">
   <h3>Contenido parametrizado</h3>
-  <p class="muted">Edita el texto. Placeholders: <code>{{ '{{ period.current_end_long }}' }}</code>, <code>{{ '{{ fact.INGRESOS_N }}' }}</code>.</p>
+  <p class="muted">También puedes editar haciendo clic en la <strong>Vista previa</strong>. Placeholders: <code>{{ '{{ period.current_end_long }}' }}</code>, <code>{{ '{{ fact.INGRESOS_N }}' }}</code>.</p>
+  <p class="muted">{{ content.blocks | length }} bloques · {{ content.sections() | length }} secciones</p>
+
+  {% set current_section = namespace(value='') %}
   {% for block in content.blocks %}
-  <form method="post" action="/projects/{{ project.id }}/content/{{ block.id }}" style="margin-bottom:18px;">
-    <label>{{ block.id }}</label>
-    <textarea name="text">{{ block.text }}</textarea>
-    <button class="btn secondary" type="submit">Guardar</button>
-  </form>
+    {% if block.section != current_section.value %}
+      {% set current_section.value = block.section %}
+      <div class="section-divider">
+        <span class="section-label">{{ block.section }}</span>
+      </div>
+    {% endif %}
+    <form method="post" action="/projects/{{ project.id }}/content/{{ block.id }}" style="margin-bottom:12px;">
+      <label>
+        <span class="block-kind {{ block.kind }}">{{ block.kind }}</span>
+        {{ block.id }}
+      </label>
+      <textarea name="text" rows="2">{{ block.text }}</textarea>
+      <div class="actions" style="gap:6px;">
+        <button class="btn secondary" type="submit" style="font-size:11px;">Guardar</button>
+      </div>
+    </form>
   {% endfor %}
+</div>
+<div class="card">
+  <h3>Añadir párrafo</h3>
+  <form method="post" action="/projects/{{ project.id }}/content">
+    <label>Texto</label>
+    <textarea name="text" required placeholder="Nuevo párrafo narrativo..."></textarea>
+    <label>Insertar después de (opcional)</label>
+    <select name="after_id">
+      <option value="">Al final</option>
+      {% for block in content.blocks %}
+      <option value="{{ block.id }}">{{ block.id }}</option>
+      {% endfor %}
+    </select>
+    <div class="actions">
+      <button class="btn" type="submit">Añadir</button>
+    </div>
+  </form>
+</div>
+
+{% elif tab == 'tablas' %}
+<div class="card">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+    <div>
+      <h3 style="margin:0 0 4px 0;">Tablas del informe ({{ tables_list | length }})</h3>
+      <p class="muted" style="margin:0;">Haz clic en una tabla en la <strong>Vista previa</strong> para editarla en el panel lateral, o descárgalas todas en Excel.</p>
+    </div>
+    <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346; border-color:#217346; font-size:12px; padding: 6px 14px;">
+      📊 Descargar Libro Completo en Excel
+    </a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Sección</th>
+        <th>Columnas</th>
+        <th>Filas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in tables_list %}
+      <tr>
+        <td><code>{{ t.id }}</code></td>
+        <td>{{ t.title[:60] }}</td>
+        <td>{{ t.section }}</td>
+        <td>{{ t.cols }}</td>
+        <td>{{ t.rows }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 {% elif tab == 'validaciones' %}
 <div class="card">
   <h3>Validaciones</h3>
+  <p class="muted">Validación de cuadre del Balance, totales internos de tablas, y referencias cruzadas entre tablas.</p>
   {% for issue in validation.issues %}
   <div class="alert {{ issue.severity if issue.severity != 'ok' else 'ok' }}">
+    {% if issue.severity == 'error' %}⛔{% elif issue.severity == 'warning' %}⚠️{% else %}✓{% endif %}
     {{ issue.message }}
+    {% if issue.table_id %}<span class="muted" style="font-size:11px;">({{ issue.table_id }})</span>{% endif %}
   </div>
   {% endfor %}
   <p class="muted">Activo: {{ totals.assets_n_fmt }} · Pasivo+PN: {{ totals.equity_liability_n_fmt }}</p>
 </div>
 
 {% elif tab == 'preview' %}
+<div class="card preview-wide-card">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+    <div>
+      <h3 style="margin:0 0 4px 0;">Vista previa interactiva</h3>
+      <p class="muted" style="margin:0;">Haz clic en un <strong>párrafo</strong> para editarlo. Haz clic en una <strong>tabla</strong> para abrir el editor a la derecha. Usa la <strong>navegación</strong> para saltar entre títulos y páginas.</p>
+    </div>
+    <button type="button" class="btn secondary" id="preview-nav-open" hidden>☰ Navegación</button>
+  </div>
+  <div class="preview-workspace nav-open" id="preview-workspace">
+    <aside id="preview-nav" class="preview-nav" aria-label="Navegación del informe">
+      <div class="preview-nav-header">
+        <strong>Navegación</strong>
+        <button type="button" class="preview-nav-icon-btn" data-nav-close title="Cerrar">✕</button>
+      </div>
+      <div class="preview-nav-search-wrap">
+        <input type="search" data-nav-search placeholder="Buscar en documento" autocomplete="off" />
+      </div>
+      <div class="preview-nav-tabs">
+        <button type="button" class="is-active" data-nav-tab="titles">Títulos</button>
+        <button type="button" data-nav-tab="pages">Páginas</button>
+      </div>
+      <div class="preview-nav-tree-actions">
+        <button type="button" class="preview-nav-action-btn" data-nav-expand-all title="Expandir todos los niveles">Expandir todo</button>
+        <button type="button" class="preview-nav-action-btn" data-nav-collapse-all title="Colapsar subniveles">Colapsar todo</button>
+      </div>
+      <div class="preview-nav-list" data-nav-list></div>
+    </aside>
+    <iframe id="report-preview" class="preview-frame" src="/projects/{{ project.id }}/preview"></iframe>
+    <aside id="preview-side-panel" class="preview-side-panel" hidden aria-hidden="true"></aside>
+  </div>
+</div>
+<script src="/static/ui/preview_nav.js?v=2"></script>
+
+{% elif tab == 'layout' %}
 <div class="card">
-  <h3>Vista previa</h3>
-  <p class="muted">Misma plantilla que el PDF.</p>
-  <iframe class="preview-frame" src="/projects/{{ project.id }}/preview"></iframe>
+  <h3>Pruebas visuales de layout</h3>
+  <p class="muted">Cada caso parte del seed y muta contenido/tabla. Luego abre la vista previa para comprobar el reflow profesional.</p>
+  <form method="post" action="/projects/{{ project.id }}/layout-cases/reset" class="actions" style="margin-bottom:16px;">
+    <button class="btn secondary" type="submit">Restaurar seed</button>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Caso</th>
+        <th>Qué comprueba</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for case in layout_cases %}
+      <tr>
+        <td>{{ case.id }}</td>
+        <td>{{ case.title }}</td>
+        <td class="muted">{{ case.detail }}</td>
+        <td>
+          <form method="post" action="/projects/{{ project.id }}/layout-cases/{{ case.id }}">
+            <button class="btn" type="submit">Aplicar</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 {% elif tab == 'pdf' %}
 <div class="card">
-  <h3>Generar PDF</h3>
-  <p class="muted">El PDF se genera con Chromium a partir del HTML tipográfico del informe.</p>
-  <div class="actions">
-    <a class="btn" href="/projects/{{ project.id }}/pdf">Descargar PDF</a>
-    <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank">Abrir HTML</a>
+  <h3>Exportar informe</h3>
+  <p class="muted">El PDF usa el mismo motor de paginación que la vista previa. El Excel contiene todas las tablas financieras con formato profesional.</p>
+  <div class="actions" style="flex-wrap:wrap;">
+    <a class="btn" href="/projects/{{ project.id }}/pdf">📄 Descargar PDF</a>
+    <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346;border-color:#217346;">📊 Descargar Excel</a>
+    <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank">🔍 Abrir HTML</a>
   </div>
 </div>
 
 {% elif tab == 'excel' %}
 <div class="card">
-  <h3>Importar Excel</h3>
+  <h3>Automatización del informe</h3>
+
+  <h4>Preparar ejercicio siguiente (rollover)</h4>
+  <p class="muted">
+    Pasa las cifras del año N al comparativo N-1, avanza las fechas del periodo y deja el año N listo para completar.
+    El contenido narrativo se conserva (es dinámico y se reflowea al generar el PDF).
+  </p>
+  <form method="post" action="/projects/{{ project.id }}/rollover">
+    <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:end;">
+      <label>
+        Nuevo cierre (opcional)
+        <input type="date" name="new_current_end" />
+      </label>
+      <label style="display:flex; gap:8px; align-items:center; padding-bottom:6px;">
+        <input type="checkbox" name="clear_current" value="1" checked />
+        Dejar columnas N en cero
+      </label>
+      <button class="btn" type="submit" onclick="return confirm('¿Aplicar rollover? Se modificarán fechas y cifras N/N-1.');">
+        Aplicar rollover
+      </button>
+    </div>
+  </form>
+
+  <hr style="margin: 24px 0; border: none; border-top: 1px solid #ddd;" />
+
+  <h4>Importar Balance desde Excel</h4>
   <p class="muted">Columnas: id, label, level, section, role, note_refs, n, n1</p>
   <form method="post" action="/projects/{{ project.id }}/import-excel" enctype="multipart/form-data">
     <input type="file" name="file" accept=".xlsx" required />
     <div class="actions">
       <button class="btn" type="submit">Importar y reemplazar Balance</button>
       <a class="btn secondary" href="/samples/balance_sample.xlsx">Descargar Excel de ejemplo</a>
+    </div>
+  </form>
+
+  <hr style="margin: 24px 0; border: none; border-top: 1px solid #ddd;" />
+
+  <h4>Reimportar estructura desde DOCX</h4>
+  <p class="muted">
+    Sustituye contenido y tablas genéricas por las del Word. Si el DOCX incluye
+    Balance (Activo/Pasivo) y PyG, se cargan como estados tipados editables.
+  </p>
+  <form method="post" action="/projects/{{ project.id }}/import-docx" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".docx" required />
+    <div class="actions">
+      <button class="btn" type="submit">Importar estructura DOCX</button>
     </div>
   </form>
 </div>

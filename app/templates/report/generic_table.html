@@ -1,0 +1,26 @@
+<div class="comp comp-table is-editable-table" data-table-id="{{ tbl.id }}">
+  <table class="fin-table{% if tbl.dense %} cols-dense{% endif %}" data-table-id="{{ tbl.id }}">
+    <thead>
+      <tr>
+        {% for col in tbl.columns %}
+        <th class="col-{{ col.kind }}"
+            style="text-align:{{ col.align }}">{% if col.header %}{{ col.header }}{% endif %}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in tbl.rows %}
+      <tr class="{{ 'is-total' if row.is_total else '' }}">
+        {% for cell in row.cells %}
+        {% set kind = tbl.columns[loop.index0].kind %}
+        <td class="{{ kind if kind != 'label' else 'label' }}"
+            style="{{ 'font-weight:700' if cell.bold else '' }}"
+            data-row="{{ row.index }}"
+            data-col="{{ tbl.columns[loop.index0].id }}"
+            data-numeric="{{ cell.numeric if cell.numeric is not none else '' }}">{{ cell.value }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

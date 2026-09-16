@@ -6,11 +6,7 @@ from app.services.storage import OUTPUTS_DIR
 
 
 async def html_to_pdf(html: str, output_path: Path | None = None) -> Path:
-    """Render HTML to PDF using Playwright Chromium.
-
-    Emula media=print antes de exportar para aplicar los mismos estilos
-    tipográficos que la vista de impresión / PDF.
-    """
+    """Render HTML to PDF using the same layout engine as the preview."""
     from playwright.async_api import async_playwright
 
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -20,8 +16,12 @@ async def html_to_pdf(html: str, output_path: Path | None = None) -> Path:
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         page = await browser.new_page()
-        await page.set_content(html, wait_until="networkidle")
+        await page.set_content(html, wait_until="load")
         await page.emulate_media(media="print")
+        await page.evaluate("() => window.AuditLayout && window.AuditLayout.relayout()")
+        await page.wait_for_function(
+            "() => document.documentElement.dataset.layoutReady === '1'"
+        )
         await page.pdf(
             path=str(output_path),
             format="A4",
