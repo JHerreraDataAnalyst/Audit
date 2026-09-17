@@ -1,16 +1,31 @@
 <div class="comp cover-block">
   <h1 class="cover-entity">{{ entity.legal_name }}</h1>
   {% if entity.legal_form_note %}
-  <p class="cover-note">{{ entity.legal_form_note }}</p>
+  <p class="cover-note">({{ entity.legal_form_note }})</p>
+  {% endif %}
+
+  {% if block.get('cover.subtitle') %}
+  <p class="comp cover-subtitle is-editable"
+     data-block-id="cover.subtitle"
+     data-raw="{{ block['cover.subtitle'].raw | e }}">{{ block['cover.subtitle'].text }}</p>
+  {% else %}
+  <p class="cover-subtitle">{{ project.title }}</p>
+  {% endif %}
+
+  <div class="cover-period">
+    <p class="cover-period-line">correspondientes al ejercicio terminado el</p>
+    <p class="cover-period-line"><strong>{{ period.current_end_long }}</strong></p>
+    <p class="cover-period-line" style="margin-top:10px;color:var(--muted);font-size:9.5pt;">
+      (con cifras comparativas al {{ period.prior_end_long }})
+    </p>
+    <p class="cover-period-line" style="margin-top:14px;color:var(--muted);font-size:9pt;">
+      Cifras expresadas en {{ period.currency_label }}
+    </p>
+  </div>
+
+  {% if block.get('cover.management') %}
+  <p class="comp cover-subtitle is-editable" style="margin-top:36px;"
+     data-block-id="cover.management"
+     data-raw="{{ block['cover.management'].raw | e }}">{{ block['cover.management'].text }}</p>
   {% endif %}
 </div>
-{% if block.get('cover.subtitle') %}
-<p class="comp cover-subtitle is-editable"
-   data-block-id="cover.subtitle"
-   data-raw="{{ block['cover.subtitle'].raw | e }}">{{ block['cover.subtitle'].text }}</p>
-{% endif %}
-{% if block.get('cover.management') %}
-<p class="comp cover-subtitle is-editable"
-   data-block-id="cover.management"
-   data-raw="{{ block['cover.management'].raw | e }}">{{ block['cover.management'].text }}</p>
-{% endif %}

@@ -46,12 +46,12 @@
         {% endif %}
 
       {% elif item.kind == 'paragraph' and item.id not in ['cover.subtitle', 'cover.management', 'balance.caption'] %}
-        <p class="comp narrative is-editable"
+        <p class="comp narrative is-editable{% if item.highlight %} is-highlight{% endif %}"
            data-block-id="{{ item.id }}"
            data-raw="{{ item.raw | e }}">{{ item.text }}</p>
 
       {% elif item.kind == 'list_item' %}
-        <p class="comp narrative narrative-list is-editable"
+        <p class="comp narrative narrative-list is-editable{% if item.highlight %} is-highlight{% endif %}"
            data-block-id="{{ item.id }}"
            data-raw="{{ item.raw | e }}">• {{ item.text }}</p>
       {% endif %}

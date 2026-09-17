@@ -33,11 +33,12 @@ Abre http://127.0.0.1:8000
 2. El sistema importa portada, memoria, tablas, **Balance** y **PyG** tipados
 3. Marca **Preparar ejercicio siguiente** (rollover) si quieres N→N-1
 4. Completa o ajusta cifras en **Datos** / vista previa
-5. Revisa **Validaciones** → **Vista previa** → **PDF**
+5. Revisa **Validaciones** → **Vista previa** → **PDF** / **Word**
 
-Orden del PDF: portada → Balance → PyG → Memoria (flujo dinámico).
+Orden del informe: portada → Balance → PyG → Memoria (flujo dinámico).
 
 El PDF es dinámico: al acortar o alargar texto, el documento se recompacta solo (mismo motor que la preview).
+El Word se genera desde los mismos datos (`GET /projects/{id}/docx`) para entregar o archivar sin editar el DOCX a mano.
 
 ## Layout dinámico
 

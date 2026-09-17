@@ -13,6 +13,9 @@ outputs/
 *_upload_*.xlsx
 *.pdf
 
+# Papeles de trabajo de clientes (demasiado pesados / confidenciales para git)
+clientes/
+
 # Secretos / entorno local
 .env
 .env.*

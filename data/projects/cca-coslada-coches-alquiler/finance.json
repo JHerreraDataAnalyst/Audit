@@ -1,0 +1,3187 @@
+{
+  "statements": {
+    "balance": {
+      "lines": [
+        {
+          "id": "a_activo_no_corriente",
+          "label": "A) ACTIVO NO CORRIENTE",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 100884.62,
+          "n1": 52623.5,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "i_inmovilizado_intangible",
+          "label": "I. Inmovilizado Intangible",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_desarrollo",
+          "label": "1. Desarrollo",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_concesiones",
+          "label": "2. Concesiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_patentes_licencias_marcas_y_similare",
+          "label": "3. Patentes, licencias, marcas y similare",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_fondo_de_comercio",
+          "label": "4. Fondo de comercio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_aplicaciones_informaticas",
+          "label": "5. Aplicaciones informáticas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_investigacion",
+          "label": "6. Investigación",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "7_otro_inmovilizado_intangible",
+          "label": "7. Otro inmovilizado intangible",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "ii_inmovilizado_material",
+          "label": "II. Inmovilizado Material",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 100884.62,
+          "n1": 51985.71,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_terrenos_y_construcciones",
+          "label": "1. Terrenos y construcciones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_instal_tecnicas_y_otro_inmov_materia",
+          "label": "2. Instal. técnicas y otro inmov. materia",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 100884.62,
+          "n1": 51985.71,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_inmovilizado_en_curso_y_anticipos",
+          "label": "3. Inmovilizado en curso y anticipos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "iii_inversiones_inmobiliarias",
+          "label": "III. Inversiones inmobiliarias",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_terrenos",
+          "label": "1. Terrenos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_construcciones",
+          "label": "2. Construcciones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "iv_invers_empresas_grupo_y_asociadas_a_l_p",
+          "label": "IV. Invers. empresas grupo y asociadas a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_instrumentos_de_patrimonio",
+          "label": "1. Instrumentos de patrimonio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_creditos_a_empresas",
+          "label": "2. Créditos a empresas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_valores_representativos_de_deuda",
+          "label": "3. Valores representativos de deuda",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_derivados",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_otros_activos_financieros",
+          "label": "5. Otros activos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_otras_inversiones",
+          "label": "6. Otras inversiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "v_inversiones_financieras_a_l_p",
+          "label": "V. Inversiones financieras a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 637.79,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_instrumentos_de_patrimonio_2",
+          "label": "1. Instrumentos de patrimonio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_creditos_a_terceros",
+          "label": "2. Créditos a terceros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 637.79,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_valores_representativos_de_deuda_2",
+          "label": "3. Valores representativos de deuda",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_derivados_2",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_otros_activos_financieros_2",
+          "label": "5. Otros activos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_otras_inversiones_2",
+          "label": "6. Otras inversiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "vi_activos_por_impuesto_diferido",
+          "label": "VI. Activos por impuesto diferido",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "vii_deudores_comerciales_no_corrientes",
+          "label": "VII. Deudores comerciales no corrientes",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "b_activo_corriente",
+          "label": "B) ACTIVO CORRIENTE",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 306442.69,
+          "n1": 49879.67,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "i_activos_no_corrientes_manten_para_la_vta",
+          "label": "I. Activos no corrientes manten. para la vta",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "ii_existencias",
+          "label": "II. Existencias",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_comerciales",
+          "label": "1. Comerciales",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_materias_primas_y_otros_aprovisionamie",
+          "label": "2. Materias primas y otros aprovisionamie",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_productos_en_curso",
+          "label": "3. Productos en curso",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "a_de_ciclo_largo_de_produccion",
+          "label": "a) De ciclo largo de producción",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "b_de_ciclo_corto_de_produccion",
+          "label": "b) De ciclo corto de producción",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_productos_terminados",
+          "label": "4. Productos terminados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "a_de_ciclo_largo_de_produccion_2",
+          "label": "a) De ciclo largo de producción",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "b_de_ciclo_corto_de_produccion_2",
+          "label": "b) De ciclo corto de producción",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_subproductos_residuos_y_mat_recupera",
+          "label": "5. Subproductos, residuos y mat. recupera",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_anticipos_a_proveedores",
+          "label": "6. Anticipos a proveedores",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "iii_deudores_ciales_y_otras_ctas_a_cobrar",
+          "label": "III. Deudores ciales. y otras ctas. a cobrar",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 14672.63,
+          "n1": 4182.97,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_clientes_ventas_y_prestaciones_servici",
+          "label": "1. Clientes ventas y prestaciones servici",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 2662.0,
+          "n1": 4182.97,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "a_clientes_vtas_y_prest_serv_a_l_p",
+          "label": "a) Clientes vtas. y prest. serv. a L/P",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "b_clientes_vtas_y_prest_serv_a_c_p",
+          "label": "b) Clientes vtas. y prest. serv. a C/P",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 2662.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_clientes_empresas_del_grupo_y_asociad",
+          "label": "2. Clientes, empresas del grupo y asociad",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 2305.05,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_deudores_varios",
+          "label": "3. Deudores varios",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_personal",
+          "label": "4. Personal",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_activos_por_impuesto_corriente",
+          "label": "5. Activos por impuesto corriente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_otros_creditos_con_las_admin_publicas",
+          "label": "6. Otros créditos con las Admin. Públicas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 9705.58,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "7_accionistas_socios_por_desembolsos",
+          "label": "7. Accionistas (socios) por desembolsos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "iv_invers_empresas_grupo_y_asociadas_a_c_p",
+          "label": "IV. Invers. empresas grupo y asociadas a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_instrumentos_de_patrimonio_3",
+          "label": "1. Instrumentos de patrimonio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_creditos_a_empresas_2",
+          "label": "2. Créditos a empresas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_valores_representativos_de_deuda_3",
+          "label": "3. Valores representativos de deuda",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_derivados_3",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_otros_activos_financieros_3",
+          "label": "5. Otros activos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_otras_inversiones_3",
+          "label": "6. Otras inversiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "v_inversiones_financieras_a_c_p",
+          "label": "V. Inversiones financieras a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 280992.85,
+          "n1": 500.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_instrumentos_de_patrimonio_4",
+          "label": "1. Instrumentos de patrimonio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 278912.85,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_creditos_a_empresas_3",
+          "label": "2. Créditos a empresas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "3_valores_representativos_de_deuda_4",
+          "label": "3. Valores representativos de deuda",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "4_derivados_4",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "5_otros_activos_financieros_4",
+          "label": "5. Otros activos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 2080.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "6_otras_inversiones_4",
+          "label": "6. Otras inversiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "vi_periodificaciones_a_c_p",
+          "label": "VI. Periodificaciones a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 9535.31,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "vii_efectivo_y_otros_activos_liquidos_equiv",
+          "label": "VII. Efectivo y otros activos líquidos equiv",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 1241.9,
+          "n1": 45196.7,
+          "role": "subtotal_group",
+          "section": "asset"
+        },
+        {
+          "id": "1_tesoreria",
+          "label": "1. Tesorería",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 1241.9,
+          "n1": 45196.7,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "2_otros_activos_liquidos_equivalentes",
+          "label": "2. Otros activos líquidos equivalentes",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 45196.7,
+          "role": "detail",
+          "section": "asset"
+        },
+        {
+          "id": "total_activo_a_b",
+          "label": "TOTAL ACTIVO ( A + B )",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 407327.31,
+          "n1": 102503.17,
+          "role": "total",
+          "section": "asset"
+        },
+        {
+          "id": "patrimonio_neto_y_pasivo",
+          "label": "PATRIMONIO NETO Y PASIVO",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 102503.17,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_patrimonio_neto",
+          "label": "A) PATRIMONIO NETO",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 148580.67,
+          "n1": 96968.94,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_1_fondos_propios",
+          "label": "A-1) Fondos propios",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 148580.67,
+          "n1": 96968.94,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "i_capital",
+          "label": "I. Capital",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 4000.0,
+          "n1": 4000.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_capital_escriturado",
+          "label": "1. Capital escriturado",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 4000.0,
+          "n1": 4000.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_capital_no_exigido",
+          "label": "2. (Capital no exigido)",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "ii_prima_de_emision",
+          "label": "II. Prima de Emisión",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iii_reservas",
+          "label": "III. Reservas",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 47.16,
+          "n1": 47.16,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_legal_y_estatutarias",
+          "label": "1. Legal y estatutarias",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 42.32,
+          "n1": 47.16,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_otras_reservas",
+          "label": "2. Otras reservas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 4.84,
+          "n1": 47.16,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "3_reservas_pendiente_cierre",
+          "label": "3. Reservas pendiente cierre",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iv_acciones_particip_patrimonio_prop",
+          "label": "IV.(Acciones/particip. patrimonio prop",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "v_resultados_ejercicios_anteriores",
+          "label": "V. Resultados Ejercicios Anteriores",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": -236338.66,
+          "n1": -180273.78,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_remanente",
+          "label": "1. Remanente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_resultados_negativos_de_ejerc_a",
+          "label": "2. (Resultados negativos de ejerc.a",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -236338.66,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vi_otras_aportaciones_de_socios",
+          "label": "VI. Otras aportaciones de socios",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 329260.44,
+          "n1": 329260.44,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vii_resultado_del_ejercicio",
+          "label": "VII. Resultado del ejercicio",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 51611.73,
+          "n1": -56064.88,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "cuenta_perdidas_y_ganancias_129",
+          "label": "Cuenta Pérdidas y Ganancias (129)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 51611.73,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "perdidas_y_ganancias",
+          "label": "PERDIDAS Y GANANCIAS",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "viii_dividendo_a_cuenta",
+          "label": "VIII. (Dividendo a Cuenta)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "ix_otros_instrumentos_de_patrimonio_n",
+          "label": "IX. Otros instrumentos de patrimonio n",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_2_ajustes_por_cambio_de_valor",
+          "label": "A-2) Ajustes por cambio de valor",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "i_activos_financieros_dispon_para_ven",
+          "label": "I. Activos financieros dispon.para ven",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "ii_operaciones_de_cobertura",
+          "label": "II. Operaciones de cobertura",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iii_activos_no_ctes_y_pasivos_vincul",
+          "label": "III. Activos no ctes. y pasivos vincul",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iv_diferencia_de_conversion",
+          "label": "IV. Diferencia de conversión",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "v_otros",
+          "label": "V. Otros",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vi_ajustes_cambio_valor_pendiente_de",
+          "label": "VI. Ajustes cambio valor pendiente de",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_3_subvenc_donaciones_y_legados_recib",
+          "label": "A-3) Subvenc., donaciones y legados recib",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_subvenc_donaciones_y_legados_reci",
+          "label": "1. Subvenc., donaciones y legados reci",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_subv_donac_y_legados_pendiente_c",
+          "label": "2. Subv., donac. y legados pendiente c",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_4_patrimonio_neto_pendiente_ajustar_np",
+          "label": "A-4) Patrimonio Neto pendiente ajustar NP",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 96968.94,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "b_pasivo_no_corriente",
+          "label": "B) PASIVO NO CORRIENTE",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 141253.19,
+          "n1": 1428.73,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "i_provisiones_a_l_p",
+          "label": "I. Provisiones a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_oblig_por_prestaciones_l_p_al_pers",
+          "label": "1. Oblig. por prestaciones L/P al pers",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_actuaciones_medioambientales",
+          "label": "2. Actuaciones medioambientales",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "3_provisiones_por_reestructuracion",
+          "label": "3. Provisiones por reestructuración",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "4_otras_provisiones",
+          "label": "4. Otras provisiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "ii_deudas_a_l_p",
+          "label": "II. Deudas a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 139824.46,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_obligaciones_y_otros_valores_negoci",
+          "label": "1. Obligaciones y otros valores negoci",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_deudas_con_entidades_de_credito",
+          "label": "2. Deudas con entidades de crédito",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 139824.46,
+          "n1": 2168.11,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "3_acreedores_por_arrendamiento_financ",
+          "label": "3. Acreedores por arrendamiento financ",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "4_derivados_5",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "5_otros_pasivos_financieros",
+          "label": "5. Otros pasivos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iii_deudas_empresas_grupo_y_asociadas_a",
+          "label": "III. Deudas empresas grupo y asociadas a",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iv_pasivos_por_impuesto_diferido",
+          "label": "IV. Pasivos por impuesto diferido",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 1428.73,
+          "n1": 1428.73,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "v_periodificaciones_a_l_p",
+          "label": "V. Periodificaciones a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vi_acreedores_comerciales_no_corrientes",
+          "label": "VI. Acreedores comerciales no corrientes",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vii_deuda_caract_especiales_a_l_p",
+          "label": "VII. Deuda caract. especiales a L/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "viii_pasivo_no_corriente_pdte_ajustes_n",
+          "label": "VIII. Pasivo no Corriente pdte. ajustes N",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 1428.73,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "c_pasivo_corriente",
+          "label": "C) PASIVO CORRIENTE",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 117493.45,
+          "n1": 4105.5,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "i_pasivos_vinc_activos_no_ctes_mant_v",
+          "label": "I. Pasivos vinc. activos no ctes. mant. v",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "ii_provisiones_a_c_p",
+          "label": "II. Provisiones a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iii_deudas_a_c_p",
+          "label": "III. Deudas a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 116382.43,
+          "n1": 2168.11,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_obligaciones_y_otros_valores_negoci_2",
+          "label": "1. Obligaciones y otros valores negoci",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_deudas_con_entidades_de_credito_2",
+          "label": "2. Deudas con entidades de crédito",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 116382.43,
+          "n1": 2168.11,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "3_acreedores_por_arrendamiento_financ_2",
+          "label": "3. Acreedores por arrendamiento financ",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "4_derivados_6",
+          "label": "4. Derivados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "5_otros_pasivos_financieros_2",
+          "label": "5. Otros pasivos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "iv_deudas_empresas_grupo_y_asociadas_a_c",
+          "label": "IV. Deudas empresas grupo y asociadas a C",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "v_acreedores_ciales_y_otras_ctas_a_pag",
+          "label": "V. Acreedores ciales. y otras ctas. a pag",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 398.9,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "1_proveedores",
+          "label": "1. Proveedores",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "a_proveedores_a_l_p",
+          "label": "a) Proveedores a L/P",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "b_proveedores_a_c_p",
+          "label": "b) Proveedores a C/P",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "2_proveedores_empresas_del_grupo_y_as",
+          "label": "2. Proveedores,empresas del grupo y as",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "3_acreedores_varios",
+          "label": "3. Acreedores varios",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 357.88,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "4_personal_remuneraciones_pdtes_de_p",
+          "label": "4. Personal (remuneraciones pdtes.de p",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "5_pasivos_por_impuesto_corriente",
+          "label": "5. Pasivos por impuesto corriente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "6_otras_deudas_con_las_admin_publicas",
+          "label": "6. Otras deudas con las Admin.Públicas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 41.02,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "7_anticipos_de_clientes",
+          "label": "7. Anticipos de clientes",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vi_periodificaciones_a_c_p_2",
+          "label": "VI. Periodificaciones a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "vii_deuda_caract_especiales_a_c_p",
+          "label": "VII. Deuda caract. especiales a C/P",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "viii_pasivo_corriente_pendiente_ajustes",
+          "label": "VIII. Pasivo Corriente pendiente ajustes",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 712.12,
+          "n1": 4105.5,
+          "role": "subtotal_group",
+          "section": "equity_liability"
+        },
+        {
+          "id": "total_patrimonio_neto_y_pasivo_a_b_c",
+          "label": "TOTAL PATRIMONIO NETO Y PASIVO ( A+B+C )",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 407327.31,
+          "n1": 102503.17,
+          "role": "total",
+          "section": "equity_liability"
+        }
+      ]
+    },
+    "pyg": {
+      "lines": [
+        {
+          "id": "1_importe_neto_de_la_cifra_de_negocios",
+          "label": "1. Importe neto de la cifra de negocios",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 41823.82,
+          "role": "detail"
+        },
+        {
+          "id": "a_ventas",
+          "label": "a) Ventas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_prestaciones_de_servicios",
+          "label": "b) Prestaciones de servicios",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 103250.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "2_variacion_de_existencias_de_productos_terminados_y_en_curs",
+          "label": "2. Variación de existencias de productos terminados y en curso de fabricación",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "3_trabajos_realizados_por_la_empresa_para_su_activo",
+          "label": "3. Trabajos realizados por la empresa para su activo",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "4_aprovisionamientos",
+          "label": "4. Aprovisionamientos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_consumo_de_mercaderias",
+          "label": "a) Consumo de mercaderías",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_consumo_de_materias_primas_y_otras_materias_consumibles",
+          "label": "b) Consumo de materias primas y otras materias consumibles",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_trabajos_realizados_por_otras_empresas",
+          "label": "c) Trabajos realizados por otras empresas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "d_deterioro_de_mercaderias_materias_primas_y_otros_aprovisio",
+          "label": "d) Deterioro de mercaderías, materias primas y otros aprovisionamientos .",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "5_otros_ingresos_de_explotacion",
+          "label": "5. Otros ingresos de explotación",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_ingresos_accesorios_y_otros_de_gestion_corriente",
+          "label": "a) Ingresos accesorios y otros de gestión corriente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_subvenciones_de_explotacion_incorporadas_al_resultado_del_",
+          "label": "b) Subvenciones de explotación incorporadas al resultado del ejercicio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "6_gastos_de_personal",
+          "label": "6. Gastos de personal",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -13586.67,
+          "role": "detail"
+        },
+        {
+          "id": "a_sueldos_salarios_y_asimilados",
+          "label": "a) Sueldos, salarios y asimilados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_cargas_sociales",
+          "label": "b) Cargas sociales",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_provisiones",
+          "label": "c) Provisiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "7_otros_gastos_de_explotacion",
+          "label": "7. Otros gastos de explotación",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -46932.58,
+          "role": "detail"
+        },
+        {
+          "id": "a_servicios_exteriores",
+          "label": "a) Servicios exteriores",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -37342.31,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_tributos",
+          "label": "b) Tributos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -2228.88,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_perdidas_deterioro_y_variacion_de_provisiones_por_operacio",
+          "label": "a) Pérdidas, deterioro y variación de provisiones por operaciones comerciales",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_otros_gastos_de_gestion_corriente",
+          "label": "b) Otros gastos de gestión corriente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_gastos_por_emision_de_gases_de_efecto_invernadero",
+          "label": "c) Gastos por emisión de gases de efecto invernadero",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "8_amortizacion_del_inmovilizado",
+          "label": "8. Amortización del inmovilizado",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -12248.86,
+          "n1": -5607.08,
+          "role": "detail"
+        },
+        {
+          "id": "9_imputacion_de_subvenciones_de_inmovilizado_no_financiero_y",
+          "label": "9. Imputación de subvenciones de inmovilizado no financiero y otras",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "10_excesos_de_provisiones",
+          "label": "10. Excesos de provisiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "11_deterioro_y_resultado_por_enajenaciones_del_inmovilizado",
+          "label": "11. Deterioro y resultado por enajenaciones del inmovilizado",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -45567.19,
+          "role": "detail"
+        },
+        {
+          "id": "a_deterioro_y_perdidas",
+          "label": "a) Deterioro y pérdidas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_resultados_por_enajenaciones_y_otras",
+          "label": "b) Resultados por enajenaciones y otras",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 2942.99,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "12_resultado_por_la_perdida_de_control_de_participaciones_co",
+          "label": "12. Resultado por la pérdida de control de participaciones consolidadas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_resultado_por_la_perdida_de_control_de_una_dependiente",
+          "label": "a) Resultado por la pérdida de control de una dependiente",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "total"
+        },
+        {
+          "id": "b_resultado_atribuido_a_la_participacion_retenida",
+          "label": "b) Resultado atribuido a la participación retenida",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "13_diferencia_negativa_de_combinaciones_de_negocio",
+          "label": "13. Diferencia negativa de combinaciones de negocio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "14_otros_resultados",
+          "label": "14. Otros resultados",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.05,
+          "n1": 6734.09,
+          "role": "detail"
+        },
+        {
+          "id": "a_1_resultado_de_explotacion",
+          "label": "A.1) RESULTADO DE EXPLOTACIÓN",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -63135.61,
+          "role": "subtotal"
+        },
+        {
+          "id": "15_ingresos_financieros",
+          "label": "15. Ingresos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 2.8,
+          "role": "detail"
+        },
+        {
+          "id": "a_de_participaciones_en_instrumentos_de_patrimonio",
+          "label": "a) De participaciones en instrumentos de patrimonio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "empresas_del_grupo_y_asociadas",
+          "label": "Empresas del grupo y asociadas",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "terceros",
+          "label": "Terceros",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_de_valores_negociables_y_otros_instrumentos_financieros",
+          "label": "b) De valores negociables y otros instrumentos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "empresas_del_grupo_y_asociadas_2",
+          "label": "Empresas del grupo y asociadas",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "terceros_2",
+          "label": "Terceros",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_imputacion_de_subvenciones_donaciones_y_legados_de_caracte",
+          "label": "c) Imputación de subvenciones, donaciones y legados de carácter financiero",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "16_gastos_financieros",
+          "label": "16. Gastos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -410.61,
+          "role": "detail"
+        },
+        {
+          "id": "a_por_deudas_con_empresas_del_grupo_y_asociadas",
+          "label": "a) Por deudas con empresas del grupo y asociadas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_por_deudas_con_ternceros",
+          "label": "b) Por deudas con ternceros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -380.8,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_por_actualizacion_de_provisiones",
+          "label": "c) Por actualización de provisiones",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": -3293.31,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "17_variacion_de_valor_razonable_en_instrumentos_financieros",
+          "label": "17. Variación de valor razonable en instrumentos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_cartera_de_negociacion_y_otros",
+          "label": "a) Cartera de negociación y otros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 912.85,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_imputacion_al_resultado_del_ejercicio_por_activos_financie",
+          "label": "b) Imputación al resultado del ejercicio por activos financieros disponibles para la venta",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "18_diferencias_de_cambio",
+          "label": "18. Diferencias de cambio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_imputacion_al_resultado_del_ejercicio_de_la_diferencia_de_",
+          "label": "a) Imputación al resultado del ejercicio de la diferencia de conversión",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "total"
+        },
+        {
+          "id": "b_otras_diferencias_de_cambio",
+          "label": "b) Otras diferencias de cambio",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "19_deterioro_y_resultado_por_enajenaciones_de_instrumentos_f",
+          "label": "19. Deterioro y resultado por enajenaciones de instrumentos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_deterioros_y_perdidas",
+          "label": "a) Deterioros y pérdidas",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_resultados_por_enajenaciones_y_otras_2",
+          "label": "b) Resultados por enajenaciones y otras",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "20_otros_ingresos_y_gastos_de_caracter_financiero",
+          "label": "20. Otros ingresos y gastos de carácter financiero",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_incorporacion_al_activo_de_gastos_financieros",
+          "label": "a) Incorporación al activo de gastos financieros",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "b_ingresos_financieros_derivados_de_convenios_de_acreedores",
+          "label": "b) Ingresos financieros derivados de convenios de acreedores",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "c_resto_de_ingresos_y_gastos",
+          "label": "c) Resto de ingresos y gastos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_2_resultado_financiero_15_16_17_18_19_20",
+          "label": "A.2) RESULTADO FINANCIERO (15 + 16 + 17 + 18 + 19 + 20)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -407.81,
+          "role": "subtotal"
+        },
+        {
+          "id": "21_participacion_en_beneficios_perdidas_de_sociedades_puesta",
+          "label": "21. Participación en beneficios (pérdidas) de sociedades puestas en equivalencia",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "22_deterioro_y_resultado_por_perdida_de_influencia_significa",
+          "label": "22. Deterioro y resultado por pérdida de influencia significativa de participaciones puestas en equivalencia o del control conjunto sobre una sociedad multigrupo",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "23_diferencia_negativa_de_consolidacion_de_sociedades_puesta",
+          "label": "23. Diferencia negativa de consolidación de sociedades puestas en equivalencia",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_3_resultado_antes_de_impuestos_a_1_a_2_21_22_23",
+          "label": "A.3) RESULTADO ANTES DE IMPUESTOS (A.1 + A.2 + 21 + 22 + 23)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -63543.42,
+          "role": "subtotal"
+        },
+        {
+          "id": "24_impuestos_sobre_beneficios",
+          "label": "24. Impuestos sobre beneficios",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 7478.54,
+          "role": "detail"
+        },
+        {
+          "id": "a_4_resultado_del_ejercicio_procedente_de_operaciones_contin",
+          "label": "A.4) RESULTADO DEL EJERCICIO PROCEDENTE DE OPERACIONES CONTINUADAS (A.3 + 24)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal"
+        },
+        {
+          "id": "b_operaciones_interrumpidas",
+          "label": "B) OPERACIONES INTERRUMPIDAS",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "25_resultado_del_ejercicio_procedente_de_operaciones_interru",
+          "label": "25. Resultado del ejercicio procedente de operaciones interrumpidas neto de impuestos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_5_resultado_consolidado_del_ejercicio_a_4_25",
+          "label": "A.5) RESULTADO CONSOLIDADO DEL EJERCICIO (A.4 + 25)",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": -56064.88,
+          "role": "total"
+        },
+        {
+          "id": "resultado_atribuido_a_la_sociedad_dominante",
+          "label": "Resultado atribuido a la sociedad dominante",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "resultado_atribuido_a_socios_externos",
+          "label": "Resultado atribuido a socios externos",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "a_resultado_de_la_cuenta_de_perdidas_y_ganancias",
+          "label": "A) RESULTADO DE LA CUENTA DE PÉRDIDAS Y GANANCIAS",
+          "level": 1,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "total"
+        },
+        {
+          "id": "ingresos_y_gastos_imputados_directamente_al_patrimonio_neto",
+          "label": "INGRESOS Y GASTOS IMPUTADOS DIRECTAMENTE AL PATRIMONIO NETO",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "i_por_valoracion_de_instrumentos_financieros",
+          "label": "I. Por valoración de instrumentos financieros",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "1_activos_financieros_disponibles_para_la_venta",
+          "label": "1. Activos financieros disponibles para la venta",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "2_otros_ingresos_gastos",
+          "label": "2. Otros ingresos/gastos",
+          "level": 3,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "detail"
+        },
+        {
+          "id": "ii_por_coberturas_de_flujos_de_efectivo",
+          "label": "II. Por coberturas de flujos de efectivo",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "iii_subvenciones_donaciones_y_legados_recibidos",
+          "label": "III. Subvenciones, donaciones y legados recibidos",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "iv_por_ganancias_y_perdidas_actuariales_y_otros_ajustes",
+          "label": "IV. Por ganancias y pérdidas actuariales y otros ajustes",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "v_por_activos_no_corrientes_y_pasivos_vinculados_mantenidos_",
+          "label": "V. Por activos no corrientes y pasivos vinculados, mantenidos para la venta",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        },
+        {
+          "id": "vi_diferencias_de_conversion",
+          "label": "VI. Diferencias de conversión",
+          "level": 2,
+          "parent": null,
+          "note_refs": [],
+          "n": 0.0,
+          "n1": 0.0,
+          "role": "subtotal_group"
+        }
+      ]
+    }
+  },
+  "facts": {},
+  "tables": {
+    "t_aplicacion_resultado": {
+      "id": "t_aplicacion_resultado",
+      "title": "Propuesta de aplicación del resultado",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "A reservas voluntarias",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "51.611,73",
+            "numeric": 51611.73,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "-56.064,88",
+            "numeric": -56064.88,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total aplicación",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "51.611,73",
+            "numeric": 51611.73,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "-56.064,88",
+            "numeric": -56064.88,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_3",
+      "note_ref": "3",
+      "total_row_indices": [
+        1
+      ]
+    },
+    "t_inmovilizado_material": {
+      "id": "t_inmovilizado_material",
+      "title": "Inmovilizado material — valor neto contable",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Inmovilizado material",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "100.884,62",
+            "numeric": 100884.62,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "51.985,71",
+            "numeric": 51985.71,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "100.884,62",
+            "numeric": 100884.62,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "51.985,71",
+            "numeric": 51985.71,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_5",
+      "note_ref": "5",
+      "total_row_indices": [
+        1
+      ]
+    },
+    "t_activos_financieros": {
+      "id": "t_activos_financieros",
+      "title": "Activos financieros — desglose principal",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Inversiones financieras a largo plazo",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "637,79",
+            "numeric": 637.79,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Inversiones en empresas del grupo a corto plazo",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Inversiones financieras a corto plazo",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "280.992,85",
+            "numeric": 280992.85,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "500,00",
+            "numeric": 500.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "280.992,85",
+            "numeric": 280992.85,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "1.137,79",
+            "numeric": 1137.79,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_6",
+      "note_ref": "6",
+      "total_row_indices": [
+        3
+      ]
+    },
+    "t_existencias": {
+      "id": "t_existencias",
+      "title": "Existencias",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Existencias",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_7",
+      "note_ref": "7",
+      "total_row_indices": [
+        1
+      ]
+    },
+    "t_deudores_efectivo": {
+      "id": "t_deudores_efectivo",
+      "title": "Deudores comerciales y efectivo",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Deudores comerciales y otras cuentas a cobrar",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "14.672,63",
+            "numeric": 14672.63,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "4.182,97",
+            "numeric": 4182.97,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Efectivo y otros activos líquidos equivalentes",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "1.241,90",
+            "numeric": 1241.9,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "45.196,70",
+            "numeric": 45196.7,
+            "bold": false,
+            "is_total": false
+          }
+        }
+      ],
+      "section": "nota_8",
+      "note_ref": "8",
+      "total_row_indices": []
+    },
+    "t_fondos_propios": {
+      "id": "t_fondos_propios",
+      "title": "Fondos propios",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Capital escriturado",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "4.000,00",
+            "numeric": 4000.0,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "4.000,00",
+            "numeric": 4000.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Reserva legal y estatutarias",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "42,32",
+            "numeric": 42.32,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "47,16",
+            "numeric": 47.16,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Otras reservas",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "4,84",
+            "numeric": 4.84,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "47,16",
+            "numeric": 47.16,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Otras aportaciones de socios",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "329.260,44",
+            "numeric": 329260.44,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "329.260,44",
+            "numeric": 329260.44,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Resultado del ejercicio",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "51.611,73",
+            "numeric": 51611.73,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "-56.064,88",
+            "numeric": -56064.88,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total fondos propios",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "384.919,33",
+            "numeric": 384919.32999999996,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "277.289,88",
+            "numeric": 277289.88,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_9",
+      "note_ref": "9",
+      "total_row_indices": [
+        5
+      ]
+    },
+    "t_pasivos_financieros": {
+      "id": "t_pasivos_financieros",
+      "title": "Deudas y acreedores",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Deudas a largo plazo",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "139.824,46",
+            "numeric": 139824.46,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Deudas a corto plazo",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "116.382,43",
+            "numeric": 116382.43,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "2.168,11",
+            "numeric": 2168.11,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Acreedores comerciales y otras cuentas a pagar",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "398,90",
+            "numeric": 398.9,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Total",
+            "numeric": null,
+            "bold": true,
+            "is_total": false
+          },
+          "n": {
+            "value": "256.605,79",
+            "numeric": 256605.78999999998,
+            "bold": true,
+            "is_total": true
+          },
+          "n1": {
+            "value": "2.168,11",
+            "numeric": 2168.11,
+            "bold": true,
+            "is_total": true
+          }
+        }
+      ],
+      "section": "nota_10",
+      "note_ref": "10",
+      "total_row_indices": [
+        3
+      ]
+    },
+    "t_impuesto": {
+      "id": "t_impuesto",
+      "title": "Impuesto diferido",
+      "columns": [
+        {
+          "id": "concepto",
+          "header": "",
+          "align": "left",
+          "is_amount": false
+        },
+        {
+          "id": "n",
+          "header": "31.12.2025",
+          "align": "right",
+          "is_amount": true
+        },
+        {
+          "id": "n1",
+          "header": "31.12.2024",
+          "align": "right",
+          "is_amount": true
+        }
+      ],
+      "rows": [
+        {
+          "concepto": {
+            "value": "Activos por impuesto diferido",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "0,00",
+            "numeric": 0.0,
+            "bold": false,
+            "is_total": false
+          }
+        },
+        {
+          "concepto": {
+            "value": "Pasivos por impuesto diferido",
+            "numeric": null,
+            "bold": false,
+            "is_total": false
+          },
+          "n": {
+            "value": "1.428,73",
+            "numeric": 1428.73,
+            "bold": false,
+            "is_total": false
+          },
+          "n1": {
+            "value": "1.428,73",
+            "numeric": 1428.73,
+            "bold": false,
+            "is_total": false
+          }
+        }
+      ],
+      "section": "nota_11",
+      "note_ref": "11",
+      "total_row_indices": []
+    }
+  }
+}

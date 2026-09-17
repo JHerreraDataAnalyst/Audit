@@ -11,5 +11,6 @@
     "currency_label": "Euros"
   },
   "report_type": "ccaa_mvp",
-  "title": "Cuentas Anuales"
+  "title": "Cuentas Anuales",
+  "client_group": "HH Print Management Spain"
 }

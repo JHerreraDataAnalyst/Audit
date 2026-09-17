@@ -3,28 +3,33 @@
 {% block content %}
 <div class="card">
   <h2>Informes</h2>
-  <p class="muted">Abre un informe existente o crea uno nuevo importando el Word del año anterior.</p>
-  {% if projects %}
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Entidad</th>
-        <th>Ejercicio</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for p in projects %}
-      <tr>
-        <td>{{ p.id }}</td>
-        <td>{{ p.entity.legal_name }}</td>
-        <td>{{ p.period.current_end }}</td>
-        <td><a class="btn" href="/projects/{{ p.id }}">Abrir</a></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <p class="muted">Agrupados por cliente / grupo. Abre un informe o crea uno nuevo desde Word.</p>
+  {% if project_groups %}
+    {% for group_name, projects in project_groups.items() %}
+    <div class="client-group">
+      <h3 class="client-group-title">{{ group_name }}</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Entidad</th>
+            <th>Ejercicio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in projects %}
+          <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.entity.legal_name }}</td>
+            <td>{{ p.period.current_end }}</td>
+            <td><a class="btn" href="/projects/{{ p.id }}">Abrir</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
   {% else %}
   <p>No hay proyectos en <code>data/projects</code>.</p>
   {% endif %}
@@ -41,6 +46,15 @@
       <label>
         Archivo Word (.docx)
         <input type="file" name="file" accept=".docx" required />
+      </label>
+      <label>
+        Cliente / grupo (opcional)
+        <input type="text" name="client_group" placeholder="Ej. Grupo Inmobiliaria Corral" list="known-groups" />
+        <datalist id="known-groups">
+          {% for group_name in project_groups.keys() %}
+          <option value="{{ group_name }}"></option>
+          {% endfor %}
+        </datalist>
       </label>
       <label>
         Cierre del nuevo ejercicio (opcional, ISO)

@@ -346,6 +346,8 @@ def _write_balance_section(
 
     lines = finance.lines_by_section(section)
     for line in lines:
+        if not line.is_publishable():
+            continue
         label = line.label
         if line.level == 2:
             label = f"    {label}"

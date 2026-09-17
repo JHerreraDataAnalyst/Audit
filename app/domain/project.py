@@ -24,3 +24,5 @@ class Project(BaseModel):
     period: Period
     report_type: str = "ccaa_mvp"
     title: str = "Cuentas Anuales"
+    client_group: str = ""  # p.ej. "Grupo Inmobiliaria Corral" — agrupa en el dashboard
+

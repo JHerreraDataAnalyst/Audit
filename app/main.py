@@ -65,9 +65,30 @@ async def dashboard(request: Request) -> HTMLResponse:
             projects.append(load_project(pid))
         except Exception:
             continue
+
+    # Agrupar por cliente/grupo para el dashboard
+    from collections import OrderedDict
+
+    groups: OrderedDict[str, list] = OrderedDict()
+    for p in sorted(
+        projects,
+        key=lambda x: (
+            (x.client_group or "Otros").lower(),
+            x.entity.legal_name.lower(),
+        ),
+    ):
+        g = (p.client_group or "").strip() or "Otros"
+        groups.setdefault(g, []).append(p)
+
     flash = request.query_params.get("flash")
     flash_type = request.query_params.get("flash_type", "ok")
-    html = render_ui("dashboard.html", projects=projects, flash=flash, flash_type=flash_type)
+    html = render_ui(
+        "dashboard.html",
+        project_groups=groups,
+        projects=[p for ps in groups.values() for p in ps],
+        flash=flash,
+        flash_type=flash_type,
+    )
     return HTMLResponse(html)
 
 
@@ -447,6 +468,28 @@ async def download_excel(project_id: str) -> FileResponse:
     )
 
 
+@app.get("/projects/{project_id}/docx")
+async def download_docx(project_id: str) -> FileResponse:
+    """Export the full report as a Word (.docx) file."""
+    try:
+        project = load_project(project_id)
+        finance = load_finance(project_id)
+        content = load_content(project_id)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Proyecto no encontrado") from exc
+
+    from app.services.docx_export import export_docx
+
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+    out = OUTPUTS_DIR / f"{project_id}_informe.docx"
+    export_docx(project, finance, content, out)
+    return FileResponse(
+        path=out,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        filename=f"{project.entity.legal_name} - Cuentas Anuales.docx",
+    )
+
+
 # ── DOCX import / create / rollover ────────────────────────────────────────────
 
 def _slug_project_id(name: str) -> str:
@@ -475,6 +518,7 @@ async def create_project_from_docx(
     file: UploadFile = File(...),
     current_end: Annotated[str, Form()] = "",
     apply_rollover: Annotated[str, Form()] = "",
+    client_group: Annotated[str, Form()] = "",
 ) -> RedirectResponse:
     """Crear un informe nuevo partiendo de un DOCX del año anterior."""
     if not file.filename or not file.filename.lower().endswith(".docx"):
@@ -505,6 +549,7 @@ async def create_project_from_docx(
             ),
             period=Period(current_end=detected, prior_end=detected_prior),
             title=result.title,
+            client_group=(client_group or "").strip(),
         )
         finance = FinanceModel(tables=result.tables, facts=dict(result.facts))
         if result.balance_lines:

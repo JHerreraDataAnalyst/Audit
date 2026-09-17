@@ -56,6 +56,7 @@ def build_context(project: Project, finance: FinanceModel, content: ContentModel
                 "note_number": block.note_number,
                 "table_id": block.table_id,
                 "keep_with_next": block.keep_with_next,
+                "highlight": block.highlight,
             }
         )
 
@@ -69,6 +70,8 @@ def build_context(project: Project, finance: FinanceModel, content: ContentModel
     asset_lines = []
     equity_lines = []
     for line in finance.statements.balance.lines:
+        if not line.is_publishable():
+            continue
         row = {
             "id": line.id,
             "label": line.label,
@@ -90,6 +93,8 @@ def build_context(project: Project, finance: FinanceModel, content: ContentModel
 
     pyg_lines = []
     for line in finance.statements.pyg.lines:
+        if not line.is_publishable():
+            continue
         pyg_lines.append(
             {
                 "id": line.id,

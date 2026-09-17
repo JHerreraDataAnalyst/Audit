@@ -10,7 +10,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from app.domain.finance import BalanceLine
+from app.domain.finance import BalanceLine, is_publishable_statement_line
 
 
 _NOTE_SPLIT = re.compile(r"\s*(?:,|;| y | Y )\s*")
@@ -109,6 +109,8 @@ def parse_balance_table_rows(tbl: object) -> list[_RawBalanceRow]:
             continue
         label = cells[0].strip()
         if not label:
+            continue
+        if not is_publishable_statement_line(label=label):
             continue
         low = label.lower()
         header_blob = " ".join(cells).lower()

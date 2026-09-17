@@ -22,6 +22,7 @@ from app.domain.finance import FinanceModel, FinanceTable, TableCell, TableColum
 from app.domain.validation import find_concept_impact, validate_all, validate_balance, validate_table_totals
 from app.main import app
 from app.services.excel_export import export_excel
+from app.services.docx_export import export_docx
 from app.services.render import render_report_html
 from app.services.storage import load_content, load_finance, load_project
 
@@ -60,6 +61,29 @@ class TestAuditReportSystem(unittest.TestCase):
         sources = [i["source"] for i in impacts]
         self.assertTrue(any("Balance" in s for s in sources))
 
+    def test_docx_export_structure(self):
+        """Test that Word export produces a readable DOCX with cover and balance."""
+        from docx import Document
+
+        out_path = Path("outputs/test_suite_export.docx")
+        export_docx(self.project, self.finance, self.content, out_path)
+        self.assertTrue(out_path.exists())
+        self.assertGreater(out_path.stat().st_size, 5000)
+
+        doc = Document(str(out_path))
+        texts = [p.text for p in doc.paragraphs if p.text.strip()]
+        joined = "\n".join(texts)
+        self.assertIn(self.project.entity.legal_name, joined)
+        self.assertIn("Balance de situación", joined)
+        self.assertGreater(len(doc.tables), 0)
+
+        resp = self.client.get("/projects/demo-hh-print/docx")
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(
+            "wordprocessingml",
+            resp.headers.get("content-type", ""),
+        )
+
     def test_excel_export_structure(self):
         """Test that professional Excel workbook is generated with all required sheets."""
         import openpyxl
@@ -94,6 +118,52 @@ class TestAuditReportSystem(unittest.TestCase):
         self.assertIn("is-editable-table", html)
         self.assertIn("balance_asset", html)
         self.assertIn("table-modal", html)
+
+    def test_internal_control_lines_excluded_from_report(self):
+        """Filas de control del Excel (CHECK) no deben salir en preview ni exportaciones."""
+        from docx import Document
+
+        from app.domain.finance import BalanceLine, is_publishable_statement_line
+
+        self.assertFalse(is_publishable_statement_line(label="CHECK"))
+        self.assertFalse(is_publishable_statement_line(label=" check "))
+        self.assertTrue(is_publishable_statement_line(label="TOTAL ACTIVO"))
+
+        f_copy = self.finance.model_copy(deep=True)
+        f_copy.statements.balance.lines.append(
+            BalanceLine(
+                id="check",
+                label="CHECK",
+                level=2,
+                section="equity_liability",
+                role="detail",
+                n=0.0,
+                n1=0.0,
+            )
+        )
+
+        html = render_report_html(self.project, f_copy, self.content, editable=False)
+        self.assertNotIn(">CHECK<", html)
+        self.assertNotIn("data-line-id=\"check\"", html)
+
+        docx_path = Path("outputs/test_no_check.docx")
+        export_docx(self.project, f_copy, self.content, docx_path)
+        doc = Document(str(docx_path))
+        table_texts = []
+        for table in doc.tables:
+            for row in table.rows:
+                table_texts.extend(c.text.strip() for c in row.cells)
+        self.assertNotIn("CHECK", table_texts)
+
+        xlsx_path = Path("outputs/test_no_check.xlsx")
+        export_excel(self.project, f_copy, xlsx_path)
+        import openpyxl
+
+        wb = openpyxl.load_workbook(str(xlsx_path), data_only=False)
+        ws = wb["Balance"]
+        labels = [ws.cell(r, 1).value for r in range(1, ws.max_row + 1)]
+        self.assertNotIn("CHECK", labels)
+        self.assertFalse(any(isinstance(v, str) and v.strip().upper() == "CHECK" for v in labels))
 
     def test_update_balance_via_api(self):
         """Test updating a balance line via the POST /tables/balance_asset endpoint."""

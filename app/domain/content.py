@@ -17,6 +17,7 @@ class ContentBlock(BaseModel):
     section: str = ""  # Agrupación lógica: "portada", "nota_1", "nota_4", etc.
     note_number: int | None = None  # Número de nota para headings de Memoria
     table_id: str | None = None  # Referencia a FinanceTable (cuando kind == "table_ref")
+    highlight: bool = False  # Resaltar en amarillo (pendiente / solicitar)
 
 
 class ContentModel(BaseModel):

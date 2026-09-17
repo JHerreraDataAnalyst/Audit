@@ -7,6 +7,17 @@ from pydantic import BaseModel, Field
 
 LineRole = Literal["detail", "subtotal_group", "subtotal", "total", "header", "spacer"]
 
+# Filas de control del Excel de trabajo del cliente; no deben salir en el informe.
+_INTERNAL_CONTROL_LABELS = frozenset({"check", "todo", "fixme", "xxx", "test"})
+
+
+def is_publishable_statement_line(*, label: str, role: str = "detail") -> bool:
+    """True si la línea puede mostrarse en vista previa / Word / Excel / PDF."""
+    if role == "spacer":
+        return False
+    normalized = " ".join(str(label).split()).casefold()
+    return normalized not in _INTERNAL_CONTROL_LABELS
+
 
 class BalanceLine(BaseModel):
     id: str
@@ -18,6 +29,9 @@ class BalanceLine(BaseModel):
     n1: float = 0.0
     role: LineRole = "detail"
     section: Literal["asset", "equity_liability"] = "asset"
+
+    def is_publishable(self) -> bool:
+        return is_publishable_statement_line(label=self.label, role=self.role)
 
 
 class BalanceStatement(BaseModel):
@@ -34,6 +48,9 @@ class PygLine(BaseModel):
     n: float = 0.0
     n1: float = 0.0
     role: LineRole = "detail"
+
+    def is_publishable(self) -> bool:
+        return is_publishable_statement_line(label=self.label, role=self.role)
 
 
 class PygStatement(BaseModel):

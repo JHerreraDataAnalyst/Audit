@@ -1,0 +1,16 @@
+{
+  "id": "pgf-promociones-gran-ferial",
+  "entity": {
+    "legal_name": "PROMOCIONES GRAN FERIAL DE COSLADA, S.L.U.",
+    "legal_form_note": "Sociedad Unipersonal"
+  },
+  "period": {
+    "current_end": "2025-12-31",
+    "prior_end": "2024-12-31",
+    "currency": "EUR",
+    "currency_label": "Euros"
+  },
+  "report_type": "ccaa_mvp",
+  "title": "Cuentas Anuales",
+  "client_group": "Grupo Inmobiliaria Corral"
+}

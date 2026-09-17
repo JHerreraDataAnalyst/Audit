@@ -1,16 +1,20 @@
-/* Design tokens: CCAA profesional (Arial Narrow, A4). Flujo dinámico, tipografía neutra. */
+/* Design tokens: CCAA estilo HH Print (Arial Narrow, A4, aireado). */
 :root {
   --font-report: "Arial Narrow", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --text: #1a1a1a;
+  --text: #111;
   --muted: #555;
   --rule: #222;
-  --accent: #333;
-  --accent-soft: rgba(0, 0, 0, 0.06);
+  --rule-soft: #b0b0b0;
+  --accent: #222;
+  --accent-soft: rgba(0, 0, 0, 0.05);
   --page-w: 210mm;
   --page-h: 297mm;
-  --margin-x: 18mm;
-  --margin-top: 16mm;
-  --margin-bottom: 14mm;
+  /* Márgenes tipo CCAA firma: más aire a la izquierda */
+  --margin-x: 22mm;
+  --margin-left: 28mm;
+  --margin-right: 20mm;
+  --margin-top: 22mm;
+  --margin-bottom: 18mm;
 }
 
 * { box-sizing: border-box; }
@@ -33,7 +37,7 @@ html, body {
   position: absolute;
   left: -220mm;
   top: 0;
-  width: calc(var(--page-w) - (2 * var(--margin-x)));
+  width: calc(var(--page-w) - var(--margin-left) - var(--margin-right));
   visibility: hidden;
   pointer-events: none;
 }
@@ -46,7 +50,7 @@ html, body {
   width: var(--page-w);
   height: var(--page-h);
   margin: 0 auto 12px;
-  padding: var(--margin-top) var(--margin-x) 10mm;
+  padding: var(--margin-top) var(--margin-right) 12mm var(--margin-left);
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -66,39 +70,53 @@ html, body {
   min-height: 0;
 }
 
-.sheet-first .cover-entity {
-  padding-top: 48mm;
+.sheet-first .cover-block {
+  padding-top: 55mm;
   text-align: center;
 }
 
-/* ── Cover ─────────────────────────────────────────────────────────────────── */
+/* ── Cover (estilo HH Print) ───────────────────────────────────────────────── */
 .cover-entity {
-  font-size: 16pt;
+  font-size: 15pt;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  margin: 0 0 6px;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .cover-note {
   font-size: 11pt;
-  margin: 0 0 28px;
+  margin: 0 0 36px;
   text-align: center;
   color: var(--muted);
+  font-style: italic;
 }
 
 .cover-subtitle {
   font-size: 12pt;
-  margin: 0 0 8px;
-  line-height: 1.45;
+  margin: 0 0 6px;
+  line-height: 1.5;
   text-align: center;
+  font-weight: 400;
+}
+
+.cover-period {
+  font-size: 11pt;
+  margin: 28px 0 0;
+  text-align: center;
+  line-height: 1.55;
+}
+
+.cover-period .cover-period-line {
+  margin: 0 0 2px;
 }
 
 /* ── Headings (Memoria notes) ──────────────────────────────────────────────── */
 .comp-heading1 {
   font-size: 11pt;
   font-weight: 700;
-  margin: 1.5em 0 0.45em;
+  margin: 1.85em 0 0.55em;
   color: var(--text);
   break-after: avoid;
   page-break-after: avoid;
@@ -111,7 +129,7 @@ html, body {
 .comp-heading2 {
   font-size: 10pt;
   font-weight: 700;
-  margin: 1.1em 0 0.35em;
+  margin: 1.25em 0 0.4em;
   color: var(--text);
   break-after: avoid;
   page-break-after: avoid;
@@ -121,9 +139,20 @@ html, body {
 .narrative {
   text-align: justify;
   font-size: 10pt;
-  margin: 0 0 0.75em;
+  line-height: 1.45;
+  margin: 0 0 0.85em;
   orphans: 3;
   widows: 3;
+}
+
+/* Pendiente / solicitar — resaltado amarillo */
+.narrative.is-highlight,
+.is-highlight {
+  background: #fff3a0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 2px 4px;
+  border-left: 3px solid #e6c200;
 }
 
 .narrative-list {
@@ -168,19 +197,21 @@ html, body {
   border-collapse: collapse;
   font-size: 9pt;
   table-layout: auto;
+  border: none;
 }
 
 .fin-table.cols-dense {
-  font-size: 7.5pt;
+  font-size: 8pt;
 }
 
 .fin-table th {
   font-weight: 700;
   text-align: right;
+  border: none;
   border-bottom: 1px solid var(--rule);
-  padding: 4px 5px;
+  padding: 5px 6px 6px;
   vertical-align: bottom;
-  line-height: 1.2;
+  line-height: 1.25;
   word-break: normal;
   overflow-wrap: break-word;
   hyphens: manual;
@@ -224,11 +255,13 @@ html, body {
 .fin-table th.col-note,
 .fin-table td.note {
   text-align: center;
-  min-width: 10mm;
+  min-width: 12mm;
   width: 1%;
   white-space: nowrap;
   padding-left: 4px;
-  padding-right: 4px;
+  padding-right: 8px;
+  color: var(--muted);
+  font-size: 8.5pt;
 }
 
 .fin-table th.col-amount,
@@ -254,19 +287,32 @@ html, body {
   padding-left: 4px;
 }
 
-.fin-table td { padding: 3px 5px; vertical-align: top; }
-.fin-table tr.level-2 td.label { padding-left: 14px; font-weight: 400; }
+.fin-table td {
+  padding: 2.5px 6px;
+  vertical-align: top;
+  border: none;
+}
+.fin-table tr.level-2 td.label { padding-left: 12px; font-weight: 400; }
+.fin-table tr.level-3 td.label { padding-left: 22px; font-weight: 400; }
 .fin-table tr.level-1 td.label { font-weight: 400; }
 .fin-table tr.is-group td.label { font-weight: 700; }
+.fin-table tr.is-group td { padding-top: 7px; }
 .fin-table tr.is-total td {
   font-weight: 700;
   border-top: 1px solid var(--rule);
-  padding-top: 6px;
+  border-bottom: 2.5px double var(--rule);
+  padding-top: 8px;
+  padding-bottom: 5px;
 }
 .fin-table tr.is-subtotal td {
   font-weight: 700;
-  border-top: 0.5px solid #999;
-  padding-top: 5px;
+  border-top: 0.6px solid var(--rule-soft);
+  padding-top: 6px;
+}
+.fin-table tr.spacer td {
+  height: 6px;
+  padding: 0;
+  border: none;
 }
 
 /* Table hover hint for editing */
@@ -282,10 +328,14 @@ html, body {
 }
 .is-editable-table td.note {
   cursor: pointer;
-  color: var(--accent);
+  color: var(--muted);
+  text-decoration: none;
+}
+.is-editable-table:hover td.note {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+  color: var(--accent);
 }
 
 /* Whole table object selected (not a single row) */

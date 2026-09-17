@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from app.domain.finance import PygLine
+from app.domain.finance import PygLine, is_publishable_statement_line
 
 
 _NOTE_SPLIT = re.compile(r"\s*(?:,|;| y | Y )\s*")
@@ -118,6 +118,8 @@ def parse_pyg_table_rows(tbl: object) -> list[_RawPygRow]:
         if not label and "nota" in blob and "ejercicio" in blob:
             continue
         if not label:
+            continue
+        if not is_publishable_statement_line(label=label):
             continue
         if label.lower() in {"nota"} or (not label and "ejercicio" in blob):
             continue

@@ -12,11 +12,14 @@
       </p>
     </div>
     <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+      <a class="btn" href="/projects/{{ project.id }}/docx" style="background:#2B579A; border-color:#2B579A; font-size:12px; padding: 6px 14px; font-weight:600;">
+        Descargar Word
+      </a>
       <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346; border-color:#217346; font-size:12px; padding: 6px 14px; font-weight:600;">
-        📊 Descargar Excel
+        Descargar Excel
       </a>
       <a class="btn" href="/projects/{{ project.id }}/pdf" style="font-size:12px; padding: 6px 14px;">
-        📄 Descargar PDF
+        Descargar PDF
       </a>
       <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank" style="font-size:12px; padding: 6px 14px;">
         👁️ Ver Informe
@@ -314,11 +317,12 @@
 {% elif tab == 'pdf' %}
 <div class="card">
   <h3>Exportar informe</h3>
-  <p class="muted">El PDF usa el mismo motor de paginación que la vista previa. El Excel contiene todas las tablas financieras con formato profesional.</p>
+  <p class="muted">Trabaja en el programa; al terminar descarga Word o PDF. El Excel contiene todas las tablas financieras con formato profesional.</p>
   <div class="actions" style="flex-wrap:wrap;">
-    <a class="btn" href="/projects/{{ project.id }}/pdf">📄 Descargar PDF</a>
-    <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346;border-color:#217346;">📊 Descargar Excel</a>
-    <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank">🔍 Abrir HTML</a>
+    <a class="btn" href="/projects/{{ project.id }}/docx" style="background:#2B579A;border-color:#2B579A;">Descargar Word</a>
+    <a class="btn" href="/projects/{{ project.id }}/pdf">Descargar PDF</a>
+    <a class="btn" href="/projects/{{ project.id }}/excel" style="background:#217346;border-color:#217346;">Descargar Excel</a>
+    <a class="btn secondary" href="/projects/{{ project.id }}/preview" target="_blank">Abrir HTML</a>
   </div>
 </div>
 

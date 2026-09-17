@@ -6,7 +6,7 @@
   <div>
     <div class="stmt-title">Cuenta de pérdidas y ganancias</div>
     <div class="stmt-meta">ejercicio terminado el {{ period.current_end_long }}</div>
-    <div class="stmt-meta">({{ period.currency_label }})</div>
+    <div class="stmt-meta">Cifras en {{ period.currency_label }}</div>
   </div>
 </header>
 
@@ -16,8 +16,8 @@
       <tr>
         <th class="col-label"></th>
         <th class="col-note">Nota</th>
-        <th class="col-amount">{{ period.current_year }}</th>
-        <th class="col-amount">{{ period.prior_year }}</th>
+        <th class="col-amount">{{ period.current_end_short }}</th>
+        <th class="col-amount">{{ period.prior_end_short }}</th>
       </tr>
     </thead>
     <tbody>
